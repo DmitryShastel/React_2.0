@@ -6,17 +6,18 @@ import {Rating} from "./components/Rating/Rating";
 function App() {
     return (
         <div className="App">
-            <AppTitle/>
+            <PageTitle title={'This is APP component'}/>
             <Rating value={3}/>
-            <Accordion/>
+            <Accordion title={'Menu'}/>
             <Rating value={4}/>
         </div>
+
     );
 }
 
-const AppTitle = () => {
+const PageTitle = (props: any) => {
     return (
-        <h3>This is APP component</h3>
+        <h3>{props.title}</h3>
     )
 }
 

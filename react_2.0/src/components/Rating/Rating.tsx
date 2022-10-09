@@ -70,8 +70,6 @@ export const Rating = (props:any) => {
 }
 
 
-
-
 const Star = (props: any) => {
     if(props.selected === true) {
        return  <span><b> Star </b></span>
