@@ -5,7 +5,7 @@ function App() {
     return (
         <div className="App">
             <AppTitle/>
-            <Reating/>
+            <Rating/>
             <Accordion/>
         </div>
     );
@@ -16,15 +16,13 @@ const AppTitle = () => {
         <>This is APP component</>
     )
 }
-
-const Reating = () => {
+const Rating = () => {
     return (
         <div>
             <Star/>
         </div>
     )
 }
-
 const Star = () => {
     return (
         <div>
@@ -36,17 +34,26 @@ const Star = () => {
         </div>
     )
 }
-
 const Accordion = () => {
     return (
         <div>
-            <h4>Menu</h4>
-            <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-            </ul>
+            <AccordionTitle/>
+            <AccordionBody/>
         </div>
+    )
+}
+const AccordionTitle = () => {
+    return (
+        <h4>Menu</h4>
+    )
+}
+const AccordionBody = () => {
+    return (
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
     )
 }
 
