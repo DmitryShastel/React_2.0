@@ -4,11 +4,17 @@ import './App.css';
 function App() {
     return (
         <div className="App">
-            <h3>This is APP component</h3>
+            <AppTitle/>
             <Reating/>
             <Accordion/>
         </div>
     );
+}
+
+const AppTitle = () => {
+    return (
+        <>This is APP component</>
+    )
 }
 
 const Reating = () => {
