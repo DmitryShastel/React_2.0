@@ -10,6 +10,7 @@ function App() {
             <Rating value={3}/>
             <Accordion title={'Menu'}/>
             <Rating value={4}/>
+            <Accordion title={'Users'}/>
         </div>
 
     );
@@ -17,7 +18,7 @@ function App() {
 
 const PageTitle = (props: any) => {
     return (
-        <h3>{props.title}</h3>
+        <h4>{props.title}</h4>
     )
 }
 
