@@ -7,23 +7,25 @@ function App() {
     return (
         <div className="App">
             <PageTitle title={'This is APP component'}/>
-            <Rating value={3}/>
-            <Accordion title={'Menu'}/>
-            <Rating value={4}/>
-            <Accordion title={'Users'}/>
+            {/*<Rating value={5}/>*/}
+            <Accordion title={'Menu'} collapsed={true}/>
+            {/*<Rating value={4}/>*/}
+            <Accordion title={'Users'} collapsed={false}/>
         </div>
 
     );
 }
 
-const PageTitle = (props: any) => {
+
+type PageTitleType = {
+    title: string
+}
+
+const PageTitle = (props: PageTitleType) => {
     return (
         <h4>{props.title}</h4>
     )
 }
-
-
-
 
 
 export default App;
