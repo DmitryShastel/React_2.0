@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import './App.css';
 import {Accordion} from "./components/Accordion/Accordion";
 import {Rating} from "./components/Rating/Rating";
@@ -24,10 +24,6 @@ function App() {
         </div>
 
     );
-}
-
-const turnOn = (event: React.FormEvent<HTMLFormElement>) =>{
-    
 }
 
 
