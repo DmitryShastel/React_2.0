@@ -1,4 +1,4 @@
-import React, {ChangeEvent} from 'react';
+import React, {ChangeEvent, useState} from 'react';
 
 type OnOffType = {
 
@@ -7,6 +7,9 @@ type OnOffType = {
 
 export const OnOff = (props: OnOffType) => {
 
+    let [on, setOn] = useState(false)
+
+
     const onStyle = {
         width: '30px',
         height: '20px',
@@ -14,7 +17,7 @@ export const OnOff = (props: OnOffType) => {
         display: 'inline-block',
         margin: '5px',
         padding: '2px',
-        backgroundColor: 'red'
+        backgroundColor: on ? 'green' : 'white'
     }
     const offStyle = {
         width: '30px',
@@ -23,7 +26,7 @@ export const OnOff = (props: OnOffType) => {
         display: 'inline-block',
         margin: '5px',
         padding: '2px',
-        backgroundColor: 'red',
+        backgroundColor: on ? 'white' : 'red'
     }
     const indicatorStyle = {
         width: '10px',
@@ -31,14 +34,14 @@ export const OnOff = (props: OnOffType) => {
         borderRadius: '5px',
         border: '1px solid black',
         display: 'inline-block',
-        backgroundColor: 'red',
+        backgroundColor: on ? 'green' : 'red'
     }
 
     return (
         <div>
-           <div style={onStyle}>On</div>
-           <div style={offStyle}>Off</div>
-           <div style={indicatorStyle}></div>
+           <div style={onStyle} onClick={() => {setOn(true)}}>On</div>
+           <div style={offStyle} onClick={() => {setOn(false)}}>Off</div>
+           <div style={indicatorStyle} onClick={() => {}}></div>
         </div>
     );
 };
