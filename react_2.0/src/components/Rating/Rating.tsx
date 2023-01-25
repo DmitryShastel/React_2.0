@@ -1,22 +1,22 @@
 import React, {useState} from 'react';
 
-type  RatingType = {
-    value: 0 | 1 | 2 | 3 | 4 | 5
+type  RatingPropsType = {
+
 }
 
 
 
-export const UncontrolledRating = (props: RatingType) => {
+export const UncontrolledRating = (props: RatingPropsType) => {
     let [value, setvalue] = useState(4)
 
     return (
         <div>
-            <Star selected={props.value > 0}/>
-            <Star selected={props.value > 1}/>
-            <Star selected={props.value > 2}/>
-            <Star selected={props.value > 3}/>
-            <Star selected={props.value > 4}/>
-            <Star selected={props.value > 5}/>
+            <Star selected={value > 0}/>
+            <Star selected={value > 1}/>
+            <Star selected={value > 2}/>
+            <Star selected={value > 3}/>
+            <Star selected={value > 4}/>
+            <Star selected={value > 5}/>
         </div>
     )
 }
