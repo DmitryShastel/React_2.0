@@ -9,7 +9,7 @@ function App() {
         <div className="App">
 
 
-            <Rating value={ratingValue}/>
+            <Rating value={ratingValue} onClick={setRatingvalue}/>
 
 
             {/*<UncontrolledAccordion title={'Menu'}/>*/}
