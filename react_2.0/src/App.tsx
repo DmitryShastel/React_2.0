@@ -1,13 +1,15 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
-import {Rating} from "./components/Rating/Rating";
+import {Rating, RatingValueType} from "./components/Rating/Rating";
 
 function App() {
+    let [ratingValue, setRatingvalue] = useState<RatingValueType>(0)
+
     return (
         <div className="App">
 
 
-            <Rating/>
+            <Rating value={ratingValue}/>
 
 
             {/*<UncontrolledAccordion title={'Menu'}/>*/}
