@@ -1,32 +1,31 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 type  RatingType = {
     value: 0 | 1 | 2 | 3 | 4 | 5
 }
 
 
-export const Rating = (props: RatingType) => {
+
+export const UncontrolledRating = (props: RatingType) => {
+    let [value, setvalue] = useState(true)
+
     return (
         <div>
-            <Star selected={props.value > 0}/>
-            <Star selected={props.value > 1}/>
-            <Star selected={props.value > 2}/>
-            <Star selected={props.value > 3}/>
-            <Star selected={props.value > 4}/>
-            <Star selected={props.value > 5}/>
+            <Star selected={props.value > 0}/><button>1</button>
+            <Star selected={props.value > 1}/><button>2</button>
+            <Star selected={props.value > 2}/><button>3</button>
+            <Star selected={props.value > 3}/><button>4</button>
+            <Star selected={props.value > 4}/><button>5</button>
+            <Star selected={props.value > 5}/><button>6</button>
         </div>
     )
 }
 
 
-type StarType = {
+type StarPropsType = {
     selected: boolean
 }
 
-const Star = (props: StarType) => {
-    if (props.selected === true) {
-        return <span><b> Star </b></span>
-    } else {
-        return <span> Star </span>
-    }
+const Star = (props: StarPropsType) => {
+    return props.selected ? <span><b> Star </b></span> : <span> Star </span>
 }

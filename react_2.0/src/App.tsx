@@ -1,9 +1,8 @@
-import React, {ChangeEvent} from 'react';
+import React from 'react';
 import './App.css';
-import {Accordion} from "./components/Accordion/Accordion";
-import {Rating} from "./components/Rating/Rating";
 import {OnOff} from "./components/On_Off/On_Off";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {UncontrolledRating} from "./components/Rating/Rating";
 
 function App() {
     return (
@@ -13,13 +12,14 @@ function App() {
 
 
             <UncontrolledAccordion title={'Menu'}/>
+            <UncontrolledRating/>
             <UncontrolledAccordion title={'Users'}/>
 
             {/*<PageTitle title={'This is APP component'}/>*/}
             {/*<Accordion title={'Menu'} collapsed={true}/>*/}
             {/*<Accordion title={'Users'} collapsed={false}/>*/}
 
-            {/*<Rating value={0}/>*/}
+
             {/*<Rating value={1}/>*/}
             {/*<Rating value={2}/>*/}
             {/*<Rating value={3}/>*/}
