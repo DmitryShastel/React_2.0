@@ -10,31 +10,36 @@ export const UncontrolledAccordion = (props: AccordionType) => {
 
     return (
         <div>
-            <AccordionTitle title={props.title}/>
-            <button onClick={() => {setcollapsed(true)}}>TOGLE_ON</button>
-            <button onClick={() => {setcollapsed(false)}}>TOGLE_OFF</button>
+            <AccordionTitle title={props.title} onClick={() => {
+                setcollapsed(!collapsed)
+            }}/>
+            <button onClick={() => {
+                setcollapsed(true)
+            }}>TOGLE_ON
+            </button>
             {!collapsed && <AccordionBody/>}
-                </div>
-                )
+        </div>
+    )
 
-            }
+}
 
 
-                type AccordionTitleType = {
-                title: string
-            }
+type AccordionTitleType = {
+    title: string
+    onClick: () => void
+}
 
-                const AccordionTitle = (props: AccordionTitleType) => {
-                return (
-                <h4>{props.title}</h4>
-                )
-            }
-                const AccordionBody = () => {
-                return (
-                <ul>
-                <li>1</li>
-                <li>2</li>
-                <li>3</li>
-                </ul>
-                )
-            }
+const AccordionTitle = (props: AccordionTitleType) => {
+    return (
+        <h4 onClick={() => {props.onClick()}}>{props.title}</h4>
+    )
+}
+const AccordionBody = () => {
+    return (
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+    )
+}

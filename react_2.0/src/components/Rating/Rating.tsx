@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 type  RatingPropsType = {}
 
 
-export const UncontrolledRating = (props: RatingPropsType) => {
+export const Rating = (props: RatingPropsType) => {
     let [value, setvalue] = useState(4)
 
     return (
@@ -26,7 +26,5 @@ type StarPropsType = {
 }
 
 const Star = (props: StarPropsType) => {
-    return <span onClick={() => {
-        props.setvalue(props.value)
-    }}>{props.selected ? <b>Star </b> : 'star '}</span>
+    return <span>{props.selected ? <b>Star </b> : 'star '}</span>
 }
