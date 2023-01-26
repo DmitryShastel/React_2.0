@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import './App.css';
 import {Rating, RatingValueType} from "./components/Rating/Rating";
+import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
 
 function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -10,6 +11,7 @@ function App() {
 
 
             <Rating value={ratingValue} onClick={setRatingValue}/>
+            <UncontrolledRating/>
 
 
             {/*<UncontrolledAccordion title={'Menu'}/>*/}
