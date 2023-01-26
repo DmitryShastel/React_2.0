@@ -8,11 +8,9 @@ function App() {
 
     return (
         <div className="App">
-
-
+            
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolledRating/>
-
 
             {/*<UncontrolledAccordion title={'Menu'}/>*/}
             {/*<UncontrolledAccordion title={'Users'}/>*/}
