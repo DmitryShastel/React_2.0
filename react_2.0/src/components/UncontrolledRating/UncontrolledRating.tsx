@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 
 type  RatingType = {
     value: 0 | 1 | 2 | 3 | 4 | 5
@@ -6,6 +6,8 @@ type  RatingType = {
 
 
 export const Rating = (props: RatingType) => {
+
+    let [value, setValue] = useState(0);
     return (
         <div>
             <Star selected={props.value > 0}/>
