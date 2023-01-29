@@ -12,7 +12,7 @@ export const Accordion = (props: AccordionType) => {
 
     return (
         <div>
-            <AccordionTitle title={props.title} />
+            <AccordionTitle title={props.title} onClick={props.onClick}/>
             {props.collapsed === false && <AccordionBody/>}
         </div>
     )
@@ -22,6 +22,7 @@ export const Accordion = (props: AccordionType) => {
 
 type AccordionTitleType = {
     title: string
+    onClick: (value: AccordionType2) => void
 }
 
 const AccordionTitle = (props: AccordionTitleType) => {
