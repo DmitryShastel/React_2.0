@@ -9,7 +9,7 @@ export const Accordion = (props: AccordionType) => {
 
     return (
         <div>
-            <AccordionTitle title={props.title}/>
+            <AccordionTitle title={props.title} />
             {props.collapsed === false && <AccordionBody/>}
         </div>
     )
@@ -23,7 +23,7 @@ type AccordionTitleType = {
 
 const AccordionTitle = (props: AccordionTitleType) => {
     return (
-        <h4>{props.title}</h4>
+        <h4 onClick={() => {}}>{props.title}</h4>
     )
 }
 const AccordionBody = () => {
