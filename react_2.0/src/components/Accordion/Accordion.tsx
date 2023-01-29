@@ -23,11 +23,12 @@ export const Accordion = (props: AccordionType) => {
 type AccordionTitleType = {
     title: string
     onClick: (value: AccordionType2) => void
+    collapsed: boolean
 }
 
 const AccordionTitle = (props: AccordionTitleType) => {
     return (
-        <h4 onClick={() => {}}>{props.title}</h4>
+        <h4 onClick={() => {props.onClick(props.collapsed)}}>{props.title}</h4>
     )
 }
 const AccordionBody = () => {
