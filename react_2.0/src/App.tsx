@@ -14,7 +14,7 @@ function App() {
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolledRating/>
 
-            <Accordion title={'Menu'} collapsed={accordionCollapsed}/>
+            <Accordion title={'Menu'} collapsed={accordionCollapsed} onClick={setAccordionCollapsed}/>
 
             {/*<UncontrolledAccordion title={'Menu'}/>*/}
             {/*<UncontrolledAccordion title={'Users'}/>*/}

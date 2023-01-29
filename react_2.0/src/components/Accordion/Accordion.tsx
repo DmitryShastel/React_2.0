@@ -1,8 +1,11 @@
 import React from 'react';
 
+export type AccordionType2 = true | false
+
 type AccordionType = {
     title: string
     collapsed: boolean
+    onClick: (value: AccordionType2) => void
 }
 
 export const Accordion = (props: AccordionType) => {
