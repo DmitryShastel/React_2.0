@@ -16,7 +16,7 @@ function App() {
             <Rating value={ratingValue} onClick={setRatingValue}/>
             <UncontrolledRating/>
 
-            <UncontrolledOnOff/>
+            <UncontrolledOnOff on={switchOn} onChange={setSwitchOn}/>
 
             {/*<Accordion*/}
             {/*    title={'Menu'}*/}
