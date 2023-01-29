@@ -15,9 +15,9 @@ function App() {
             <UncontrolledRating/>
 
             <Accordion
-                title={'Menu'} 
+                title={'Menu'}
                 collapsed={accordionCollapsed}
-                onChange={setAccordionCollapsed(!accordionCollapsed)}/>
+                onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
 
             {/*<UncontrolledAccordion title={'Menu'}/>*/}
             {/*<UncontrolledAccordion title={'Users'}/>*/}
