@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import {Rating, RatingValueType} from "../../Monday/components/Rating/Rating";
 
 export default {
-    title: 'Rating stories',
+    title: 'Rating',
     component: Rating
 }
 

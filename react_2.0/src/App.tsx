@@ -4,6 +4,7 @@ import {Rating, RatingValueType} from "./Monday/components/Rating/Rating";
 import {UncontrolledRating} from "./Monday/components/UncontrolledRating/UncontrolledRating";
 import {Accordion} from "./Monday/components/Accordion/Accordion";
 import {UncontrolledOnOff} from "./Monday/components/UncontrolledOn_Off/On_Off";
+import {OnOff} from "./Monday/components/On_Off/On_Off";
 
 function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -27,7 +28,7 @@ function App() {
             {/*<UncontrolledAccordion title={'Users'}/>*/}
             {/*<PageTitle title={'This is APP component'}/>*/}
             {/*<Accordion title={'Users'} collapsed={false}/>*/}
-            {/*<OnOff/>*/}
+            {/*<OnOff on={true} onChange={setSwitchOn}/>*/}
             {/*<Rating value={1}/>*/}
             {/*<Rating value={2}/>*/}
             {/*<Rating value={3}/>*/}
