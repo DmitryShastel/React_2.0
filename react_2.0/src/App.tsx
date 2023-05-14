@@ -1,9 +1,9 @@
 import React, {useState} from 'react';
 import './App.css';
-import {Rating, RatingValueType} from "./components/Rating/Rating";
-import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
-import {Accordion} from "./components/Accordion/Accordion";
-import {UncontrolledOnOff} from "./components/UncontrolledOn_Off/On_Off";
+import {Rating, RatingValueType} from "./Monday/components/Rating/Rating";
+import {UncontrolledRating} from "./Monday/components/UncontrolledRating/UncontrolledRating";
+import {Accordion} from "./Monday/components/Accordion/Accordion";
+import {UncontrolledOnOff} from "./Monday/components/UncontrolledOn_Off/On_Off";
 
 function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
