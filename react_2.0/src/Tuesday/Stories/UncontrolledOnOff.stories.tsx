@@ -11,11 +11,11 @@ export default {
 const callback = action('on or off clicked')
 
 export const OnMode = () => <UncontrolledOnOff  onChange={callback}/>
-export const OffMode = () => <UncontrolledOnOff on={false} onChange={callback}/>
+export const OffMode = () => <UncontrolledOnOff onChange={callback}/>
 export const CombinedMode = () => {
 
     let [switchOn, setSwitchOn] = useState<boolean>(false)
     return (
-        <UncontrolledOnOff on={switchOn} onChange={setSwitchOn}/>
+        <UncontrolledOnOff  onChange={setSwitchOn}/>
     )
 }
