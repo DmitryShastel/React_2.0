@@ -5,6 +5,7 @@ import {UncontrolledRating} from "./Monday/components/UncontrolledRating/Uncontr
 import {Accordion} from "./Monday/components/Accordion/Accordion";
 import {UncontrolledOnOff} from "./Monday/components/UncontrolledOn_Off/On_Off";
 import {OnOff} from "./Monday/components/On_Off/On_Off";
+import {UncontrolledAccordion} from "./Monday/components/UncontrolledAccordion/UncontrolledAccordion";
 
 function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -24,7 +25,7 @@ function App() {
             {/*    collapsed={accordionCollapsed}*/}
             {/*    onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>*/}
 
-            {/*<UncontrolledAccordion title={'Menu'}/>*/}
+            <UncontrolledAccordion title={'Menu'}/>
             {/*<UncontrolledAccordion title={'Users'}/>*/}
             {/*<PageTitle title={'This is APP component'}/>*/}
             {/*<Accordion title={'Users'} collapsed={false}/>*/}
