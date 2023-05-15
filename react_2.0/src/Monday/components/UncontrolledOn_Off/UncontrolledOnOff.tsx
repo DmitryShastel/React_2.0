@@ -1,7 +1,7 @@
 import React, {ChangeEvent, useState} from 'react';
 
 type OnOffType = {
-    on: boolean
+    // on: boolean
     onChange: (on: boolean) => void
 }
 
@@ -16,7 +16,7 @@ export const UncontrolledOnOff = (props: OnOffType) => {
         display: 'inline-block',
         margin: '5px',
         padding: '2px',
-        backgroundColor: props.on ? 'green' : 'white'
+        backgroundColor: on ? 'green' : 'white'
     }
     const offStyle = {
         width: '30px',

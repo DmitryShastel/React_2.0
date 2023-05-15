@@ -8,8 +8,6 @@ type OnOffType = {
 
 export const OnOff = (props: OnOffType) => {
 
-    // let [on, setOn] = useState(false)
-
 
     const onStyle = {
         width: '30px',

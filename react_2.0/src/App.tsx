@@ -3,7 +3,7 @@ import './App.css';
 import {Rating, RatingValueType} from "./Monday/components/Rating/Rating";
 import {UncontrolledRating} from "./Monday/components/UncontrolledRating/UncontrolledRating";
 import {Accordion} from "./Monday/components/Accordion/Accordion";
-import {UncontrolledOnOff} from "./Monday/components/UncontrolledOn_Off/On_Off";
+import {UncontrolledOnOff} from "./Monday/components/UncontrolledOn_Off/UncontrolledOnOff";
 import {OnOff} from "./Monday/components/On_Off/On_Off";
 import {UncontrolledAccordion} from "./Monday/components/UncontrolledAccordion/UncontrolledAccordion";
 
