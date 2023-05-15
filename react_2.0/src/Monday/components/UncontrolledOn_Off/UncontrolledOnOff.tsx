@@ -8,6 +8,7 @@ type OnOffType = {
 
 export const UncontrolledOnOff = (props: OnOffType) => {
 
+    let [on, setOn] = useState(false)
 
     const onStyle = {
         width: '30px',
@@ -25,7 +26,7 @@ export const UncontrolledOnOff = (props: OnOffType) => {
         display: 'inline-block',
         margin: '5px',
         padding: '2px',
-        backgroundColor: props.on ? 'white' : 'red'
+        backgroundColor: on ? 'white' : 'red'
     }
     const indicatorStyle = {
         width: '10px',
@@ -33,7 +34,7 @@ export const UncontrolledOnOff = (props: OnOffType) => {
         borderRadius: '5px',
         border: '1px solid black',
         display: 'inline-block',
-        backgroundColor: props.on ? 'green' : 'red'
+        backgroundColor: on ? 'green' : 'red'
     }
 
     return (
