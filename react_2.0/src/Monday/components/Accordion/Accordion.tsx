@@ -5,13 +5,14 @@ export type AccordionType = {
     title: string
     collapsed: boolean
     onChange: () => void
+    onClick: () => void
 }
 
 export const Accordion = (props: AccordionType) => {
 
     return (
         <div>
-            <AccordionTitle title={props.title} onChange={props.onChange}/>
+            <AccordionTitle title={props.title} onChange={props.onChange} />
             {props.collapsed === false && <AccordionBody/>}
         </div>
     )

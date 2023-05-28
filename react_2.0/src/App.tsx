@@ -15,20 +15,20 @@ function App() {
     return (
         <div className="App">
 
-            <Rating value={ratingValue} onClick={setRatingValue}/>
-            <UncontrolledRating/>
+            <Accordion
+                title={'Menu'}
+                collapsed={accordionCollapsed}
+                onClick={() => {}}
+                onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
 
+
+            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
+            {/*<UncontrolledRating/>*/}
             {/*<UncontrolledOnOff on={switchOn} onChange={setSwitchOn}/>*/}
-
-            {/*<Accordion*/}
-            {/*    title={'Menu'}*/}
-            {/*    collapsed={accordionCollapsed}*/}
-            {/*    onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>*/}
-
-            <UncontrolledAccordion title={'Menu'}/>
+            {/*<Accordion title={'Users'} collapsed={false} onChange={() => {}}/>*/}
+            {/*<UncontrolledAccordion title={'Menu'}/>*/}
             {/*<UncontrolledAccordion title={'Users'}/>*/}
             {/*<PageTitle title={'This is APP component'}/>*/}
-            {/*<Accordion title={'Users'} collapsed={false}/>*/}
             {/*<OnOff on={true} onChange={setSwitchOn}/>*/}
             {/*<Rating value={1}/>*/}
             {/*<Rating value={2}/>*/}
