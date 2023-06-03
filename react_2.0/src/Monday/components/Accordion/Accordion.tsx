@@ -17,7 +17,7 @@ export const Accordion = (props: AccordionType) => {
             <AccordionTitle
                 title={props.title}
                 onChange={props.onChange}
-                style={{color: props.color ? props.color : 'black'}}
+                color={props.color}
             />
             {props.collapsed === false && <AccordionBody/>}
         </div>
@@ -29,11 +29,14 @@ export const Accordion = (props: AccordionType) => {
 type AccordionTitleType = {
     title: string
     onChange: () => void
+    color?: string
 }
 
 const AccordionTitle = (props: AccordionTitleType) => {
     return (
-        <h4 onClick={props.onChange}>{props.title}</h4>
+        <h4
+            style={{color: props.color ? props.color : 'black'}}
+            onClick={props.onChange}>{props.title}</h4>
     )
 }
 const AccordionBody = () => {
