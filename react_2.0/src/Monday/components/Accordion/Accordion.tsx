@@ -5,7 +5,8 @@ export type AccordionType = {
     title: string
     collapsed: boolean
     onChange: () => void
-    onClick: () => void
+    onClick?: (value: any) => void
+    items?: {}
 }
 
 export const Accordion = (props: AccordionType) => {

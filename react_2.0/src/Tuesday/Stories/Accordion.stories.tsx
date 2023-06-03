@@ -12,21 +12,23 @@ const callback = action('accordion mode change event fired')
 const onClickCallback = action('some item was clicked')
 
 const Template: Story<AccordionType> = (args) => <Accordion {...args}/>
+const callbackProps = {
+    onClick: onClickCallback,
+    onChange: callback
+}
 
 export const MenuCollapsedMode2 = Template.bind({})
 MenuCollapsedMode2.args = {
     title: 'test title',
     collapsed: true,
-    onClick: onClickCallback,
-    onChange: callback
+    ...callbackProps
 }
 
 export const UnCollapsedMode2 = Template.bind({})
 UnCollapsedMode2.args= {
     title: 'test title',
     collapsed: false,
-    onClick: onClickCallback,
-    onChange: callback
+    ...callbackProps
 }
 
 export const CollapsedMode = () => <Accordion
@@ -46,7 +48,7 @@ export const UnCollapsedMode = () => <Accordion
 export const CombinedAccordion = () => {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
 
-    return <Accordion title={'test title'} collapsed={accordionCollapsed}
+    return <Accordion title={'Users'} collapsed={accordionCollapsed}
                       onClick={onClickCallback}
                       onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
 
