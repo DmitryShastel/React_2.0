@@ -25,21 +25,23 @@ MenuCollapsedMode2.args = {
 }
 
 export const UnCollapsedMode2 = Template.bind({})
-UnCollapsedMode2.args= {
+UnCollapsedMode2.args = {
     title: 'test title',
     collapsed: false,
     ...callbackProps
 }
 
 export const CollapsedMode = () => <Accordion
-    // items={[]}
+    items={[]}
     title={'test title'}
     collapsed={true}
     onClick={onClickCallback}
     onChange={callback}/>
 
 export const UnCollapsedMode = () => <Accordion
-    // items={[]}
+    items={[{title: 'Dima', value: 1},
+        {title: 'Valera', value: 2},
+        {title: 'Artem', value: 3},]}
     title={'test title'}
     collapsed={false}
     onClick={onClickCallback}
@@ -50,7 +52,13 @@ export const CombinedAccordion = () => {
 
     return <Accordion title={'Users'} collapsed={accordionCollapsed}
                       onClick={onClickCallback}
-                      onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
+                      onChange={() => setAccordionCollapsed(!accordionCollapsed)}
+                      items={[
+                          {title: 'Dima', value: 1},
+                          {title: 'Valera', value: 2},
+                          {title: 'Artem', value: 3},
+                      ]}
+    />
 
 
 }
