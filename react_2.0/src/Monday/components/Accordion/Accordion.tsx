@@ -7,7 +7,7 @@ export type AccordionType = {
     onChange: () => void
     onClick?: (value: any) => void
     items?: {}
-    color: string
+    color?: string
 }
 
 export const Accordion = (props: AccordionType) => {

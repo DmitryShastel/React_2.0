@@ -47,19 +47,22 @@ export const UnCollapsedMode = () => <Accordion
     onClick={onClickCallback}
     onChange={callback}/>
 
-export const CombinedAccordion = () => {
+
+export const ModeChanging: Story<AccordionType> = (args) => {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
 
-    return <Accordion title={'Users'} collapsed={accordionCollapsed}
-                      onClick={onClickCallback}
-                      onChange={() => setAccordionCollapsed(!accordionCollapsed)}
-                      items={[
-                          {title: 'Dima', value: 1},
-                          {title: 'Valera', value: 2},
-                          {title: 'Artem', value: 3},
-                      ]}
-    />
-
-
+    return <Accordion {...args} collapsed={accordionCollapsed}
+                      onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
 }
+
+ModeChanging.args = {
+    title: 'Users',
+    items: [
+        {title: 'Dima', value: 1},
+        {title: 'Valera', value: 2},
+        {title: 'Artem', value: 3},
+    ],
+    onClick: onClickCallback
+}
+
 
