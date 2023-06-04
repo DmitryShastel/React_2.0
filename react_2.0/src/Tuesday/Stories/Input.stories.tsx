@@ -16,7 +16,10 @@ export const TrackingValueOfUncontrolledInput = () => {
     const [value, setValue] = useState('')
 
     return (
-        <><input/>-{value}</>
+        <><input onChange={(e) => {
+            const actualValue = e.currentTarget.value
+            setValue(actualValue)
+        }}/>-{value}</>
     )
 }
 
