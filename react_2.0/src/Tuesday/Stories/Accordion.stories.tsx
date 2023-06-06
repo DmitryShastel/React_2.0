@@ -50,7 +50,11 @@ export const ModeChanging: Story<AccordionType> = (args) => {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
 
     return <Accordion {...args} collapsed={accordionCollapsed}
-                      onChange={() => setAccordionCollapsed(!accordionCollapsed)}/>
+                      onChange={() => setAccordionCollapsed(!accordionCollapsed)}
+                      onClick={(value) => {
+                          alert(`user with id ${value} is clicked`)
+                      }}
+    />
 }
 
 ModeChanging.args = {
