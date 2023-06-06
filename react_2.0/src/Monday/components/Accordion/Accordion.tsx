@@ -1,12 +1,17 @@
 import React from 'react';
 
 
+export type ItemType = {
+    title: string
+    value: any
+}
+
 export type AccordionType = {
     title: string
     collapsed: boolean
     onChange: () => void
     onClick?: (value: any) => void
-    items: string[]
+    items: ItemType[]
     color?: string
 }
 
@@ -41,13 +46,13 @@ const AccordionTitle = (props: AccordionTitleType) => {
 }
 
 export type BodyPropsType = {
-    items: string[]
+    items: ItemType[]
 }
 
 const AccordionBody = (props: BodyPropsType) => {
     return <ul>
         {
-            props.items.map((i, index) => <li key={index}>{i}</li>)
+            props.items.map((i, index) => <li key={index}>{i.title}</li>)
         }
     </ul>
 
