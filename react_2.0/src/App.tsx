@@ -6,6 +6,7 @@ import {Accordion} from "./Monday/components/Accordion/Accordion";
 import {UncontrolledOnOff} from "./Monday/components/UncontrolledOn_Off/UncontrolledOnOff";
 import {OnOff} from "./Monday/components/On_Off/On_Off";
 import {UncontrolledAccordion} from "./Monday/components/UncontrolledAccordion/UncontrolledAccordion";
+import {MyComponent, Select} from "./Tuesday/Select/Select";
 
 function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -15,12 +16,15 @@ function App() {
     return (
         <div className="App">
 
-            <Accordion
-                title={'Menu'}
-                collapsed={accordionCollapsed}
-                onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>
 
+            <MyComponent />
 
+            {/*<Accordion*/}
+            {/*    title={'Menu'}*/}
+            {/*    items={[]}*/}
+            {/*    onClick={() => {}}*/}
+            {/*    collapsed={accordionCollapsed}*/}
+            {/*    onChange={() => {setAccordionCollapsed(!accordionCollapsed)}}/>*/}
             {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
             {/*<UncontrolledRating/>*/}
             {/*<UncontrolledOnOff on={switchOn} onChange={setSwitchOn}/>*/}
