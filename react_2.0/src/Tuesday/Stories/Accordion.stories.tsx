@@ -39,7 +39,7 @@ export const CollapsedMode = () => <Accordion
     onChange={callback}/>
 
 export const UnCollapsedMode = () => <Accordion
-    items={['Dima', 'Valera', 'Artem']}
+    items={[{title: 'Dima', value: 1}, {title: 'Valera', value: 2}, {title: 'Artem', value: 3}]}
     title={'test title'}
     collapsed={false}
     onClick={onClickCallback}
@@ -55,7 +55,7 @@ export const ModeChanging: Story<AccordionType> = (args) => {
 
 ModeChanging.args = {
     title: 'Users',
-    items: ['Dima', 'Valera', 'Artem'],
+    items: [{title: 'Dima', value: 1}, {title: 'Valera', value: 2}, {title: 'Artem', value: 3}],
     onClick: onClickCallback
 }
 
