@@ -8,7 +8,7 @@ export default {
 
 
 export const UncontrolledInput = () => <input/>
-export const ControlledInput = () => <input value={'it-incubator'}/>
+export const ControlledInput2 = () => <input value={'it-incubator'}/>
 
 
 export const TrackingValueOfUncontrolledInput = () => {
@@ -40,6 +40,19 @@ export const GetValueOfUncontrolledInputByButtonPress = () => {
             <button onClick={save}> Save</button>
             - actual value: {value}</>
     )
+}
+
+
+export const ControlledInput = () => {
+
+}
+
+export const ControlledCheckbox = () => {
+
+}
+
+export const ControlledSelect = () => {
+    
 }
 
 
