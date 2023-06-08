@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Icon} from "./Icon";
 import "./Dropdown.css";
 
@@ -15,6 +15,8 @@ type OptionsType = {
 
 
 export const Dropdown = (props: PlaceHolderType) => {
+
+    const [showMenu, setShowMenu] = useState(false)
 
     const getDisplay = () => {
         return props.placeHolder
