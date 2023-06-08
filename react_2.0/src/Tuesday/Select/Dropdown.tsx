@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {ChangeEvent, DetailedHTMLProps, HTMLAttributes, useEffect, useState} from 'react';
 import {Icon} from "./Icon";
 import "./Dropdown.css";
 
@@ -32,9 +32,14 @@ export const Dropdown = (props: PlaceHolderType) => {
         }
     })
 
+    const handelInputClick = (e:any) => {
+        e.stopPropagation();
+        setShowMenu(!showMenu)
+    }
+
     return (
         <div className="dropdown-container">
-            <div className="dropdown-input">
+            <div onClick={handelInputClick} className="dropdown-input">
                 <div className='dropdown-selected-value'>{getDisplay()}</div>
                 <div className="dropdown-tools">
                     <div className="dropdown-tool">
