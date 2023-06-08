@@ -20,16 +20,23 @@ export const Dropdown = (props: PlaceHolderType) => {
     const [selectedValue, setSelectedValue] = useState<any>(null)
 
     const getDisplay = () => {
-        if(selectedValue) {
+        if (selectedValue) {
             return selectedValue.value
         }
         return props.placeHolder
     }
 
-    const onItemClick = (option: string) => {
+    const onItemClick = (option: any) => {
         setSelectedValue(option)
     }
 
+        const isSelected = (option: any) => {
+            if (!selectedValue) {
+                return false
+            }
+
+            return selectedValue.value === option.value
+    }
 
     useEffect(() => {
         const handel = () => setShowMenu(false);
