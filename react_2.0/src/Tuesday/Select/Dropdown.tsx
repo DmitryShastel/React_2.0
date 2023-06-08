@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Icon} from "./Icon";
 import "./Dropdown.css";
 
@@ -21,6 +21,16 @@ export const Dropdown = (props: PlaceHolderType) => {
     const getDisplay = () => {
         return props.placeHolder
     }
+
+    useEffect(() => {
+        const handel = () => setShowMenu(false);
+
+        window.addEventListener('click', handel);
+
+        return () => {
+            window.removeEventListener('click', handel);
+        }
+    })
 
     return (
         <div className="dropdown-container">
