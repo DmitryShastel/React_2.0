@@ -1,4 +1,4 @@
-import React, {ChangeEvent, DetailedHTMLProps, HTMLAttributes, useEffect, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {Icon} from "./Icon";
 import "./Dropdown.css";
 
@@ -17,10 +17,19 @@ type OptionsType = {
 export const Dropdown = (props: PlaceHolderType) => {
 
     const [showMenu, setShowMenu] = useState(false)
+    const [selectedValue, setSelectedValue] = useState<any>(null)
 
     const getDisplay = () => {
+        if(selectedValue) {
+            return selectedValue.value
+        }
         return props.placeHolder
     }
+
+    const onItemClick = (option: string) => {
+        setSelectedValue(option)
+    }
+
 
     useEffect(() => {
         const handel = () => setShowMenu(false);
@@ -31,8 +40,7 @@ export const Dropdown = (props: PlaceHolderType) => {
             window.removeEventListener('click', handel);
         }
     })
-
-    const handelInputClick = (e:any) => {
+    const handelInputClick = (e: any) => {
         e.stopPropagation();
         setShowMenu(!showMenu)
     }
@@ -49,13 +57,14 @@ export const Dropdown = (props: PlaceHolderType) => {
 
             </div>
 
-            <div className="dropdown-menu">
-                {props.options.map((option) => (
-                    <div key={option.value} className='dropdown-item'>{option.label}</div>
-                ))}
-            </div>
+            {showMenu && (
+                <div className="dropdown-menu">
+                    {props.options.map((option) => (
+                        <div key={option.value} className='dropdown-item'>{option.label}</div>
+                    ))}
+                </div>
+            )}
         </div>
-
     );
 };
 
