@@ -7,6 +7,9 @@ import {UncontrolledOnOff} from "./Monday/components/UncontrolledOn_Off/Uncontro
 import {OnOff} from "./Monday/components/On_Off/On_Off";
 import {UncontrolledAccordion} from "./Monday/components/UncontrolledAccordion/UncontrolledAccordion";
 import {MyComponent, Select} from "./Tuesday/Select/Select";
+import {Dropdown} from "./Tuesday/Select/Dropdown";
+
+
 
 function App() {
     let [ratingValue, setRatingValue] = useState<RatingValueType>(0)
@@ -17,7 +20,7 @@ function App() {
         <div className="App">
 
 
-            <MyComponent/>
+            <Dropdown placeHolder='Select...'/>
 
             {/*<Accordion*/}
             {/*    title={'Menu'}*/}
