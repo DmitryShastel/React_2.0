@@ -5,7 +5,7 @@ import "./Dropdown.css";
 
 type PlaceHolderType = {
     placeHolder: any
-    options?: OptionsType
+    options: OptionsType[]
 }
 
 type OptionsType = {
@@ -13,11 +13,6 @@ type OptionsType = {
     label: string
 }
 
-const options = [
-    {value: 'green', label: "Green"},
-    {value: 'green', label: "Green"},
-    {value: 'green', label: "Green"},
-]
 
 export const Dropdown = (props: PlaceHolderType) => {
 
@@ -30,11 +25,10 @@ export const Dropdown = (props: PlaceHolderType) => {
             <div className="dropdown-input">
 
                 <div className="dropdown-menu">
-                    {props.options.map((option) => {
-                        <div key={option.value}>{option.label}</div>
-                    })}
+                    {props.options.map((option) => (
+                        <div key={option.value} className='dropdown-item'>{option.label}</div>
+                    ))}
                 </div>
-
 
             </div>
         </div>

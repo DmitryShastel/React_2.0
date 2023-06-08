@@ -16,6 +16,11 @@ function App() {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
 
+    const options = [
+        {value: 'green', label: "Green"},
+        {value: 'green', label: "Green"},
+        {value: 'green', label: "Green"},
+    ]
 
     return (
         <div className="App">
