@@ -1,12 +1,24 @@
 import React from 'react';
 import {Icon} from "./Icon";
+import "./Dropdown.css";
 
 
 type PlaceHolderType = {
     placeHolder: any
+    options?: OptionsType
 }
 
-//@ts-ignore
+type OptionsType = {
+    value: string
+    label: string
+}
+
+const options = [
+    {value: 'green', label: "Green"},
+    {value: 'green', label: "Green"},
+    {value: 'green', label: "Green"},
+]
+
 export const Dropdown = (props: PlaceHolderType) => {
 
     const getDisplay = () => {
@@ -16,15 +28,15 @@ export const Dropdown = (props: PlaceHolderType) => {
     return (
         <div className="dropdown-container">
             <div className="dropdown-input">
-                <div className="dropdown-selected-value">{getDisplay()}</div>
-                <div className="dropdown-tools">
-                    <div className="dropdown-tool">
-                        <Icon/>
-                    </div>
+
+                <div className="dropdown-menu">
+                    {props.options.map((option) => {
+                        <div key={option.value}>{option.label}</div>
+                    })}
                 </div>
+
+
             </div>
         </div>
     );
 };
-
-

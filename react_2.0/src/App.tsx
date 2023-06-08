@@ -16,11 +16,12 @@ function App() {
     let [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     let [switchOn, setSwitchOn] = useState<boolean>(false)
 
+
     return (
         <div className="App">
 
 
-            <Dropdown placeHolder='Select...'/>
+            <Dropdown placeHolder='Select...' options={options}/>
 
             {/*<Accordion*/}
             {/*    title={'Menu'}*/}
