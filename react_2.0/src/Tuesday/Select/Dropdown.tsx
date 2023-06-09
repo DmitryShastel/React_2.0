@@ -21,13 +21,32 @@ export const Dropdown = (props: PlaceHolderType) => {
     const [selectedValue, setSelectedValue] = useState<any>(props.isMulti ? [] : null)
 
     const getDisplay = () => {
-        if (selectedValue) {
-            return selectedValue.value
+        if (!selectedValue || selectedValue.length === 0) {
+            return props.placeHolder
         }
-        return props.placeHolder
+        if (props.isMulti) {
+            return (
+                <div className="dropdown-tags">
+                    {
+                        selectedValue.map((option: any) => (
+                            <div key={option.value} className="dropdown-tag-item">
+                                {option.label}
+                                <span onClick={(e) => onTagRemove(e, option)} className="dropdown-tag-close">
+                                    <CloseIcon/>
+                                </span>
+                            </div>
+                        ))
+                    }
+                </div>
+            )
+        }
+        return selectedValue.label;
     }
 
 
+    const removeOption = (option: any) => {
+        return selectedValue.filter((o: any) => o.value !== option.value)
+    }
 
     const onItemClick = (option: any) => {
         setSelectedValue(option)
