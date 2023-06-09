@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react';
-import {Icon} from "./Icon";
+import {CloseIcon, Icon} from "./Icon";
 import "./Dropdown.css";
 
 
@@ -46,6 +46,11 @@ export const Dropdown = (props: PlaceHolderType) => {
 
     const removeOption = (option: any) => {
         return selectedValue.filter((o: any) => o.value !== option.value)
+    }
+
+    const onTagRemove = (e: any, option: any) => {
+        e.stopPropagation();
+        selectedValue(removeOption(option))
     }
 
     const onItemClick = (option: any) => {
