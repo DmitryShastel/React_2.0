@@ -6,6 +6,7 @@ import "./Dropdown.css";
 type PlaceHolderType = {
     placeHolder: any
     options: OptionsType[]
+    isMulti: []
 }
 
 type OptionsType = {
@@ -17,7 +18,7 @@ type OptionsType = {
 export const Dropdown = (props: PlaceHolderType) => {
 
     const [showMenu, setShowMenu] = useState(false)
-    const [selectedValue, setSelectedValue] = useState<any>(null)
+    const [selectedValue, setSelectedValue] = useState<any>(props.isMulti ? [] : null)
 
     const getDisplay = () => {
         if (selectedValue) {
@@ -26,16 +27,17 @@ export const Dropdown = (props: PlaceHolderType) => {
         return props.placeHolder
     }
 
+
+
     const onItemClick = (option: any) => {
         setSelectedValue(option)
     }
+    const isSelected = (option: any) => {
+        if (!selectedValue) {
+            return false
+        }
 
-        const isSelected = (option: any) => {
-            if (!selectedValue) {
-                return false
-            }
-
-            return selectedValue.value === option.value
+        return selectedValue.value === option.value
     }
 
     useEffect(() => {
@@ -67,7 +69,12 @@ export const Dropdown = (props: PlaceHolderType) => {
             {showMenu && (
                 <div className="dropdown-menu">
                     {props.options.map((option) => (
-                        <div key={option.value} className='dropdown-item'>{option.label}</div>
+                        <div
+                            onClick={() => onItemClick(option)}
+                            key={option.value}
+                            className={`dropdown-item ${isSelected(option) && 'selected'}`}>
+                            {option.label}
+                        </div>
                     ))}
                 </div>
             )}

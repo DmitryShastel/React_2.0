@@ -17,9 +17,9 @@ function App() {
     let [switchOn, setSwitchOn] = useState<boolean>(false)
 
     const options = [
-        {value: 'green', label: "Green"},
-        {value: 'green', label: "Green"},
-        {value: 'green', label: "Green"},
+        {value: 'green1', label: "Green1"},
+        {value: 'green2', label: "Green2"},
+        {value: 'green3', label: "Green3"},
     ]
 
     return (
