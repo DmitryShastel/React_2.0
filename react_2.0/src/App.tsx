@@ -26,7 +26,7 @@ function App() {
         <div className="App">
 
 
-            <Dropdown placeHolder='Select...' options={options}/>
+            <Dropdown placeHolder='Select...' options={options} />
 
             {/*<Accordion*/}
             {/*    title={'Menu'}*/}

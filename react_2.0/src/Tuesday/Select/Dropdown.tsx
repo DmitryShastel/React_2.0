@@ -6,7 +6,7 @@ import "./Dropdown.css";
 type PlaceHolderType = {
     placeHolder: any
     options: OptionsType[]
-    isMulti: []
+    isMulti?: any
 }
 
 type OptionsType = {
