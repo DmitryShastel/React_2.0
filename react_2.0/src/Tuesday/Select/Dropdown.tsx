@@ -50,13 +50,28 @@ export const Dropdown = (props: PlaceHolderType) => {
 
     const onTagRemove = (e: any, option: any) => {
         e.stopPropagation();
-        selectedValue(removeOption(option))
+        setSelectedValue(removeOption(option))
     }
 
     const onItemClick = (option: any) => {
-        setSelectedValue(option)
+        let newValue;
+        if (props.isMulti) {
+            if (selectedValue.findIndex((o: any) => o.value === option.value) >= 0) {
+                newValue = removeOption(option);
+            } else {
+                newValue = [...selectedValue, option]
+            }
+        } else {
+            newValue = option
+        }
+        setSelectedValue(newValue)
     }
+
+
     const isSelected = (option: any) => {
+        if (props.isMulti) {
+            return selectedValue.filter((o: any) => o.value === option.value).length > 0
+        }
         if (!selectedValue) {
             return false
         }
@@ -105,5 +120,3 @@ export const Dropdown = (props: PlaceHolderType) => {
         </div>
     );
 };
-
-
