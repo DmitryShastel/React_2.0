@@ -21,6 +21,13 @@ function App() {
                 isSearchable
                 onChange={(value) => console.log(value)}
             />
+            <Dropdown
+                placeHolder='Select...'
+                options={options}
+                isMulti={true}
+                isSearchable
+                onChange={(value) => console.log(value)}
+            />
 
         </div>
 

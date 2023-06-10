@@ -23,6 +23,73 @@ export const Dropdown = (props: PlaceHolderType) => {
     const [selectedValue, setSelectedValue] = useState<any>(props.isMulti ? [] : null)
     const [searchValue, setSearchValue] = useState('')
     const searchRef: any = useRef();
+    const inputRef: any = useRef();
+
+    useEffect(() => {
+        const handel = (e: any) => {
+            if (inputRef.current && !inputRef.current.contains(e.target)) {
+                setShowMenu(false);
+            }
+        };
+
+        window.addEventListener('click', handel);
+
+        return () => {
+            window.removeEventListener('click', handel);
+        }
+    })
+    useEffect(() => {
+        setSearchValue('');
+        if (showMenu && searchRef.current) {
+            searchRef.current.focus();
+        }
+    }, [showMenu])
+
+    const removeOption = (option: any) => {
+        return selectedValue.filter((o: any) => o.value !== option.value)
+    }
+    const onTagRemove = (e: any, option: any) => {
+        e.stopPropagation();
+        const newValue = removeOption(option);
+        setSelectedValue(newValue)
+        props.onChange(newValue);
+    }
+    const onItemClick = (option: any) => {
+        let newValue;
+        if (props.isMulti) {
+            if (selectedValue.findIndex((o: any) => o.value === option.value) >= 0) {
+                newValue = removeOption(option);
+            } else {
+                newValue = [...selectedValue, option]
+            }
+        } else {
+            newValue = option
+        }
+        setSelectedValue(newValue)
+        props.onChange(newValue);
+    }
+    const isSelected = (option: any) => {
+        if (props.isMulti) {
+            return selectedValue.filter((o: any) => o.value === option.value).length > 0
+        }
+        if (!selectedValue) {
+            return false
+        }
+
+        return selectedValue.value === option.value
+    }
+    const onSearch = (e: any) => {
+        setSearchValue(e.target.value)
+    }
+    const getOptions = () => {
+        if (!searchValue) {
+            return props.options
+        }
+        return props.options.filter((option: any) => option.label.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0)
+    }
+    const handelInputClick = (e: any) => {
+        setShowMenu(!showMenu)
+    }
 
     const getDisplay = () => {
         if (!selectedValue || selectedValue.length === 0) {
@@ -48,74 +115,10 @@ export const Dropdown = (props: PlaceHolderType) => {
     }
 
 
-    const removeOption = (option: any) => {
-        return selectedValue.filter((o: any) => o.value !== option.value)
-    }
-    const onTagRemove = (e: any, option: any) => {
-        e.stopPropagation();
-        setSelectedValue(removeOption(option))
-    }
-    const onItemClick = (option: any) => {
-        let newValue;
-        if (props.isMulti) {
-            if (selectedValue.findIndex((o: any) => o.value === option.value) >= 0) {
-                newValue = removeOption(option);
-            } else {
-                newValue = [...selectedValue, option]
-            }
-        } else {
-            newValue = option
-        }
-        setSelectedValue(newValue)
-    }
-    const isSelected = (option: any) => {
-        if (props.isMulti) {
-            return selectedValue.filter((o: any) => o.value === option.value).length > 0
-        }
-        if (!selectedValue) {
-            return false
-        }
-
-        return selectedValue.value === option.value
-    }
-
-    const onSearch = (e: any) => {
-        setSearchValue(e.target.value)
-    }
-
-    const getOptions = () => {
-        if (!searchValue) {
-            return props.options
-        }
-        return props.options.filter((option: any) => option.label.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0)
-    }
-
-    useEffect(() => {
-        const handel = () => setShowMenu(false);
-
-        window.addEventListener('click', handel);
-
-        return () => {
-            window.removeEventListener('click', handel);
-        }
-    })
-
-    useEffect(() => {
-        setSearchValue('');
-        if (showMenu && searchRef.current) {
-            searchRef.current.focus();
-        }
-    }, [showMenu])
-
-
-    const handelInputClick = (e: any) => {
-        e.stopPropagation();
-        setShowMenu(!showMenu)
-    }
 
     return (
         <div className="dropdown-container">
-            <div onClick={handelInputClick} className="dropdown-input">
+            <div ref={inputRef} onClick={handelInputClick} className="dropdown-input">
                 <div className='dropdown-selected-value'>{getDisplay()}</div>
                 <div className="dropdown-tools">
                     <div className="dropdown-tool">
