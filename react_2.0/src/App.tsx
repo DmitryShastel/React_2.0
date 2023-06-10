@@ -6,9 +6,9 @@ import {Dropdown} from "./Tuesday/Select/Dropdown";
 function App() {
 
     const options = [
-        {value: 'green1', label: "Green1"},
-        {value: 'green2', label: "Green2"},
-        {value: 'green3', label: "Green3"},
+        {value: 'green1', label: "Green"},
+        {value: 'green2', label: "Red"},
+        {value: 'green3', label: "Yellow"},
     ]
 
     return (
@@ -18,6 +18,8 @@ function App() {
                 placeHolder='Select...'
                 options={options}
                 isMulti={true}
+                isSearchable
+                onChange={(value) => console.log(value)}
             />
 
         </div>

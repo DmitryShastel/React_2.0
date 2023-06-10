@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {CloseIcon, Icon} from "./Icon";
 import "./Dropdown.css";
 
@@ -7,6 +7,8 @@ type PlaceHolderType = {
     placeHolder: any
     options: OptionsType[]
     isMulti?: any
+    isSearchable?: any
+    onChange: (value: string) => void
 }
 
 type OptionsType = {
@@ -17,8 +19,10 @@ type OptionsType = {
 
 export const Dropdown = (props: PlaceHolderType) => {
 
-    const [showMenu, setShowMenu] = useState(false)
+    const [showMenu, setShowMenu] = useState<boolean>(false)
     const [selectedValue, setSelectedValue] = useState<any>(props.isMulti ? [] : null)
+    const [searchValue, setSearchValue] = useState('')
+    const searchRef: any = useRef();
 
     const getDisplay = () => {
         if (!selectedValue || selectedValue.length === 0) {
@@ -47,12 +51,10 @@ export const Dropdown = (props: PlaceHolderType) => {
     const removeOption = (option: any) => {
         return selectedValue.filter((o: any) => o.value !== option.value)
     }
-
     const onTagRemove = (e: any, option: any) => {
         e.stopPropagation();
         setSelectedValue(removeOption(option))
     }
-
     const onItemClick = (option: any) => {
         let newValue;
         if (props.isMulti) {
@@ -66,8 +68,6 @@ export const Dropdown = (props: PlaceHolderType) => {
         }
         setSelectedValue(newValue)
     }
-
-
     const isSelected = (option: any) => {
         if (props.isMulti) {
             return selectedValue.filter((o: any) => o.value === option.value).length > 0
@@ -79,6 +79,17 @@ export const Dropdown = (props: PlaceHolderType) => {
         return selectedValue.value === option.value
     }
 
+    const onSearch = (e: any) => {
+        setSearchValue(e.target.value)
+    }
+
+    const getOptions = () => {
+        if (!searchValue) {
+            return props.options
+        }
+        return props.options.filter((option: any) => option.label.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0)
+    }
+
     useEffect(() => {
         const handel = () => setShowMenu(false);
 
@@ -88,6 +99,15 @@ export const Dropdown = (props: PlaceHolderType) => {
             window.removeEventListener('click', handel);
         }
     })
+
+    useEffect(() => {
+        setSearchValue('');
+        if (showMenu && searchRef.current) {
+            searchRef.current.focus();
+        }
+    }, [showMenu])
+
+
     const handelInputClick = (e: any) => {
         e.stopPropagation();
         setShowMenu(!showMenu)
@@ -107,7 +127,12 @@ export const Dropdown = (props: PlaceHolderType) => {
 
             {showMenu && (
                 <div className="dropdown-menu">
-                    {props.options.map((option) => (
+                    {props.isSearchable && (
+                        <div className="search-box">
+                            <input onChange={onSearch} value={searchValue} ref={searchRef}/>
+                        </div>
+                    )}
+                    {getOptions().map((option) => (
                         <div
                             onClick={() => onItemClick(option)}
                             key={option.value}
