@@ -12,8 +12,6 @@ type PlaceHolderType = {
 type OptionsType = {
     value: string
     label: string
-    label: string
-    label: string
 }
 
 
