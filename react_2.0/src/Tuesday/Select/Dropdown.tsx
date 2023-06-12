@@ -55,13 +55,13 @@ export const Dropdown = (props: PlaceHolderType) => {
 
     const isSelected = (option: OptionsType) => {
         if (props.isMulti) {
-            return selectedValue?.filter((o) => o.value === option.value).length > 0
+            return selectedValue.filter((o) => o.value === option.value).length > 0
         }
         if (!selectedValue) {
             return false
         }
 
-        return selectedValue?.value === option.value
+        return selectedValue.value === option.value
     }
 
 
@@ -77,6 +77,7 @@ export const Dropdown = (props: PlaceHolderType) => {
     const handelInputClick = (e: any) => {
         setShowMenu(!showMenu)
     }
+
     const getDisplay = () => {
         if (!selectedValue || selectedValue.length === 0) {
             return props.placeHolder
@@ -97,7 +98,7 @@ export const Dropdown = (props: PlaceHolderType) => {
                 </div>
             )
         }
-        return selectedValue.label;
+        return selectedValue[0].label;
     }
 
 
