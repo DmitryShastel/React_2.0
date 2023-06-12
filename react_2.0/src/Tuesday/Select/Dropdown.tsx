@@ -25,12 +25,13 @@ export const Dropdown = (props: PlaceHolderType) => {
     const searchRef = useRef<HTMLInputElement | null>(null);
     const inputRef = useRef<HTMLInputElement | null>(null);
 
-    const removeOption = (option: OptionsType) => {
-        return selectedValue?.filter((o) => o.value !== option.value) || []
+    const removeOption = (options: OptionsType[]) => {
+        const valuesToRemove = options.map((option) => option.value)
+        return selectedValue?.filter((o) => !valuesToRemove.includes(o.value) ) || []
     }
     const onTagRemove = (e: React.MouseEvent<HTMLSpanElement>, option: OptionsType) => {
         e.stopPropagation();
-        const newValue = removeOption(option);
+        const newValue = removeOption([option]);
         setSelectedValue(newValue)
         props.onChange(newValue);
     }
