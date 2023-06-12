@@ -1,15 +1,19 @@
 import React from 'react';
 import './App.css';
-import {Dropdown} from "./Tuesday/Select/Dropdown";
+import {Dropdown, OptionsType} from "./Tuesday/Select/Dropdown";
 
 
 function App() {
 
-    const options = [
+    const options: OptionsType[] = [
         {value: 'green1', label: "Green"},
         {value: 'green2', label: "Red"},
         {value: 'green3', label: "Yellow"},
     ]
+
+    const handleChange = (value: any) => {
+        console.log(value)
+    }
 
     return (
         <div className="App">
@@ -19,34 +23,26 @@ function App() {
                 options={options}
                 isMulti={true}
                 isSearchable
-                onChange={(value) => console.log(value)}
+                onChange={handleChange}
             />
-            <Dropdown
-                placeHolder='Select...'
-                options={options}
-                isMulti={true}
-                isSearchable
-                onChange={(value) => console.log(value)}
-            />
-
         </div>
 
     );
 }
 
 
-type PageTitleType = {
-    title: string
-}
-
-const PageTitle = (props: PageTitleType) => {
-    return (
-        <h4>{props.title}</h4>
-    )
-}
-
-
 export default App;
+
+
+// type PageTitleType = {
+//     title: string
+// }
+//
+// const PageTitle = (props: PageTitleType) => {
+//     return (
+//         <h4>{props.title}</h4>
+//     )
+// }
 
 
 // let [ratingValue, setRatingValue] = useState<RatingValueType>(0)

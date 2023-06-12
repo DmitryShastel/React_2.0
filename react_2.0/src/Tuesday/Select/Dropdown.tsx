@@ -3,7 +3,7 @@ import {CloseIcon, Icon} from "./Icon";
 import "./Dropdown.css";
 
 
-type PlaceHolderType = {
+export type PlaceHolderType = {
     placeHolder: any
     options: OptionsType[]
     isMulti?: any
@@ -11,7 +11,7 @@ type PlaceHolderType = {
     onChange: (value: string) => void
 }
 
-type OptionsType = {
+export type OptionsType = {
     value: string
     label: string
 }
@@ -24,26 +24,6 @@ export const Dropdown = (props: PlaceHolderType) => {
     const [searchValue, setSearchValue] = useState('')
     const searchRef: any = useRef();
     const inputRef: any = useRef();
-
-    useEffect(() => {
-        const handel = (e: any) => {
-            if (inputRef.current && !inputRef.current.contains(e.target)) {
-                setShowMenu(false);
-            }
-        };
-
-        window.addEventListener('click', handel);
-
-        return () => {
-            window.removeEventListener('click', handel);
-        }
-    })
-    useEffect(() => {
-        setSearchValue('');
-        if (showMenu && searchRef.current) {
-            searchRef.current.focus();
-        }
-    }, [showMenu])
 
     const removeOption = (option: any) => {
         return selectedValue.filter((o: any) => o.value !== option.value)
@@ -90,7 +70,6 @@ export const Dropdown = (props: PlaceHolderType) => {
     const handelInputClick = (e: any) => {
         setShowMenu(!showMenu)
     }
-
     const getDisplay = () => {
         if (!selectedValue || selectedValue.length === 0) {
             return props.placeHolder
@@ -113,6 +92,27 @@ export const Dropdown = (props: PlaceHolderType) => {
         }
         return selectedValue.label;
     }
+
+
+    useEffect(() => {
+        const handel = (e: any) => {
+            if (inputRef.current && !inputRef.current.contains(e.target)) {
+                setShowMenu(false);
+            }
+        };
+
+        window.addEventListener('click', handel);
+
+        return () => {
+            window.removeEventListener('click', handel);
+        }
+    })
+    useEffect(() => {
+        setSearchValue('');
+        if (showMenu && searchRef.current) {
+            searchRef.current.focus();
+        }
+    }, [showMenu])
 
 
 
