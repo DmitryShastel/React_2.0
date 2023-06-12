@@ -11,7 +11,7 @@ function App() {
         {value: 'green3', label: "Yellow"},
     ]
 
-    const handleChange = (value: any) => {
+    const handleChange = (value: string) => {
         console.log(value)
     }
 
