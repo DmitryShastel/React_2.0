@@ -55,12 +55,12 @@ export const Dropdown = (props: PlaceHolderType) => {
 
     const isSelected = (option: OptionsType) => {
         if (props.isMulti) {
-            return selectedValue.filter((o) => o.value === option.value).length > 0
+            return !!selectedValue?.some((o) => o.value === option.value)
         }
         if (!selectedValue) {
             return false
         }
-
+        //@ts-ignore
         return selectedValue.value === option.value
     }
 
@@ -98,7 +98,7 @@ export const Dropdown = (props: PlaceHolderType) => {
                 </div>
             )
         }
-        return selectedValue[0].label;
+        return selectedValue[0] ? selectedValue[0]?.label : props.placeHolder;
     }
 
 

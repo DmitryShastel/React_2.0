@@ -25,6 +25,14 @@ function App() {
                 isSearchable
                 onChange={handleChange}
             />
+
+            <Dropdown
+                placeHolder='Select...'
+                options={options}
+                isMulti={true}
+                isSearchable
+                onChange={handleChange}
+            />
         </div>
 
     );
