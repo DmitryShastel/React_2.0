@@ -8,7 +8,7 @@ export type PlaceHolderType = {
     options: OptionsType[]
     isMulti: boolean
     isSearchable: boolean
-    onChange: (value: string) => void
+    onChange: (value: any) => void
 }
 
 export type OptionsType = {
@@ -27,7 +27,7 @@ export const Dropdown = (props: PlaceHolderType) => {
 
     const removeOption = (options: OptionsType[]) => {
         const valuesToRemove = options.map((option) => option.value)
-        return selectedValue?.filter((o) => !valuesToRemove.includes(o.value) ) || []
+        return selectedValue?.filter((o) => !valuesToRemove.includes(o.value)) || []
     }
     const onTagRemove = (e: React.MouseEvent<HTMLSpanElement>, option: OptionsType) => {
         e.stopPropagation();
@@ -35,30 +35,36 @@ export const Dropdown = (props: PlaceHolderType) => {
         setSelectedValue(newValue)
         props.onChange(newValue);
     }
-    const onItemClick = (option: OptionsType) => {
+    const onItemClick = (option: OptionsType | OptionsType[]) => {
         let newValue;
         if (props.isMulti) {
-            if (selectedValue.findIndex((o: any) => o.value === option.value) >= 0) {
-                newValue = removeOption(option);
+            const options = Array.isArray(option) ? option : [option]
+
+            if (options.some((o) => selectedValue?.findIndex((sv) => sv.value === o.value) === -1)) {
+                newValue = [...(selectedValue || []), ...options]
             } else {
-                newValue = [...selectedValue, option]
+                newValue = (selectedValue || []).filter((sv) => !options.some((o) => o.value === sv.value));
             }
         } else {
             newValue = option
         }
-        setSelectedValue(newValue)
+        setSelectedValue(Array.isArray(newValue) ? newValue : [newValue])
         props.onChange(newValue);
     }
+
+
     const isSelected = (option: OptionsType) => {
         if (props.isMulti) {
-            return selectedValue.filter((o) => o.value === option.value).length > 0
+            return selectedValue?.filter((o) => o.value === option.value).length > 0
         }
         if (!selectedValue) {
             return false
         }
 
-        return selectedValue.value === option.value
+        return selectedValue?.value === option.value
     }
+
+
     const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value)
     }
