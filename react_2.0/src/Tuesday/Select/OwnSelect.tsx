@@ -1,14 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, {useEffect, useRef, useState} from "react";
 
 import "./Dropdown.css";
-import {CloseIcon} from "./Icons";
-import {Icon} from "@material-ui/core";
-
+import {CloseIcon, Icons} from "./Icons";
 
 
 type OwnSelectType = {
     placeHolder: any
-    options: OptionsType
+    options: OptionsType[]
     isMulti: any
     isSearchable: any
     onChange: any
@@ -21,7 +19,7 @@ type OptionsType = {
 
 export const OwnSelect = (props: OwnSelectType) => {
     const [showMenu, setShowMenu] = useState(false);
-    const [selectedValue, setSelectedValue] = useState(props.isMulti ? [] : null);
+    const [selectedValue, setSelectedValue] = useState<any>(props.isMulti ? [] : null);
     const [searchValue, setSearchValue] = useState("");
     const searchRef = useRef<HTMLInputElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
@@ -31,7 +29,7 @@ export const OwnSelect = (props: OwnSelectType) => {
         if (showMenu && searchRef.current) {
             searchRef.current.focus();
         }
-    }, [showMenu]);
+    }, [showMenu, searchRef]);
 
     useEffect(() => {
         const handler = (e: any) => {
@@ -63,14 +61,14 @@ export const OwnSelect = (props: OwnSelectType) => {
                                 onClick={(e) => onTagRemove(e, option)}
                                 className="dropdown-tag-close"
                             >
-                <CloseIcon />
+                <CloseIcon/>
               </span>
                         </div>
                     ))}
                 </div>
             );
         }
-        return selectedValue.label;
+        return selectedValue.value;
     };
 
     const removeOption = (option: any) => {
@@ -111,16 +109,16 @@ export const OwnSelect = (props: OwnSelectType) => {
         return selectedValue.value === option.value;
     };
 
-    const onSearch = (e) => {
+    const onSearch = (e: any) => {
         setSearchValue(e.target.value);
     };
 
     const getOptions = () => {
         if (!searchValue) {
-            return options;
+            return props.options;
         }
 
-        return options.filter(
+        return props.options.filter(
             (option) =>
                 option.label.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0
         );
@@ -132,15 +130,15 @@ export const OwnSelect = (props: OwnSelectType) => {
                 <div className="dropdown-selected-value">{getDisplay()}</div>
                 <div className="dropdown-tools">
                     <div className="dropdown-tool">
-                        <Icon />
+                        <Icons/>
                     </div>
                 </div>
             </div>
             {showMenu && (
                 <div className="dropdown-menu">
-                    {isSearchable && (
+                    {props.isSearchable && (
                         <div className="search-box">
-                            <input onChange={onSearch} value={searchValue} ref={searchRef} />
+                            <input onChange={onSearch} value={searchValue} ref={searchRef}/>
                         </div>
                     )}
                     {getOptions().map((option: any) => (

@@ -13,7 +13,7 @@ export const SelectApp = () => {
     }
 
     return (
-        <div>
+        <div className="App">
             <OwnSelect
                 placeHolder='Select...'
                 options={options}

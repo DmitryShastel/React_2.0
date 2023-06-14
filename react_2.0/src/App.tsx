@@ -6,7 +6,7 @@ import {SelectApp} from "./Tuesday/Select/SelectApp";
 function App() {
 
     return (
-        <div className="App">
+        <div >
             <SelectApp/>
         </div>
     );
