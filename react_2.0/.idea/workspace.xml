@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="71e873ad-b727-491e-a4c7-bec12d1788b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tuesday/Select/Dropdown.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Select/Dropdown.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tuesday/Select/OwnSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Select/OwnSelect.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tuesday/Select/SelectApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Select/SelectApp.tsx" afterDir="false" />
@@ -84,7 +83,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686576062204</updated>
       <workItem from="1686576063361" duration="10245000" />
-      <workItem from="1686742344589" duration="7426000" />
+      <workItem from="1686742344589" duration="9788000" />
     </task>
     <servers />
   </component>
@@ -101,17 +100,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/Tuesday/Select/OwnSelect.tsx</url>
-          <line>114</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
