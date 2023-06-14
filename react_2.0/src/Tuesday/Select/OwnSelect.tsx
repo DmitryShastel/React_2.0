@@ -1,193 +1,149 @@
-import React, {useEffect, useRef, useState} from 'react';
+import React, { useEffect, useRef, useState } from "react";
 
 import "./Dropdown.css";
-import {Close as CloseIcon} from "@material-ui/icons";
-
-import {
-    FormControl,
-    InputLabel,
-    MenuItem,
-    Select,
-    TextField,
-} from "@material-ui/core";
+import {CloseIcon} from "./Icons";
+import {Icon} from "@material-ui/core";
 
 
-export type PlaceHolderType = {
-    placeHolder: string
-    options: OptionsType[]
-    isMulti: boolean
-    isSearchable: boolean
-    onChange: (value: any) => void
+
+type OwnSelectType = {
+    placeHolder: any
+    options: OptionsType
+    isMulti: any
+    isSearchable: any
+    onChange: any
 }
 
-export type OptionsType = {
-    value: string
-    label: string
+type OptionsType = {
+    value: any
+    label: any
 }
 
-
-export const OwnSelect = (props: PlaceHolderType) => {
-
-    const [showMenu, setShowMenu] = useState<boolean>(false)
-    const [selectedValue, setSelectedValue] = useState<OptionsType[]>(props.isMulti ? [] : [])
-    const [searchValue, setSearchValue] = useState<string>('')
-    const searchRef = useRef<HTMLInputElement | null>(null);
-    const inputRef = useRef<HTMLInputElement | null>(null);
+export const OwnSelect = (props: OwnSelectType) => {
+    const [showMenu, setShowMenu] = useState(false);
+    const [selectedValue, setSelectedValue] = useState(props.isMulti ? [] : null);
+    const [searchValue, setSearchValue] = useState("");
+    const searchRef = useRef();
+    const inputRef = useRef();
 
     useEffect(() => {
-        const handel = (e: MouseEvent) => {
-            if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
+        setSearchValue("");
+        if (showMenu && searchRef.current) {
+            searchRef.current.focus();
+        }
+    }, [showMenu]);
+
+    useEffect(() => {
+        const handler = (e: any) => {
+            if (inputRef.current && !inputRef.current.contains(e.target)) {
                 setShowMenu(false);
             }
         };
 
-        window.addEventListener('mousedown', handel);
-
+        window.addEventListener("click", handler);
         return () => {
-            window.removeEventListener('mousedown', handel);
-        }
-    })
-    useEffect(() => {
-        setSearchValue('');
-        if (showMenu && searchRef.current) {
-            searchRef.current.focus();
-        }
-    }, [showMenu])
-
-    const removeOption = (options: OptionsType[]) => {
-
-
-        const valuesToRemove = options.map((option) => option.value);
-        return (
-            selectedValue?.filter((o) => !valuesToRemove.includes(o.value)) || []
-        );
-    }
-
-
-    const onTagRemove = (e: React.MouseEvent<HTMLSpanElement>, option: OptionsType) => {
-
-        e.stopPropagation();
-        const newValue = removeOption([option]);
-        setSelectedValue(newValue);
-        props.onChange(newValue);
-    }
-
-
-    const onItemClick = (option: any) => {
-
-        let newValue: OptionsType[];
-        if (props.isMulti) {
-            const options = Array.isArray(option) ? option : [option];
-
-            if (options.some((o) => selectedValue.findIndex((sv) => sv.value === o.value) === -1)) {
-                newValue = [...selectedValue, ...options];
-            } else {
-                newValue = selectedValue.filter((sv) => !options.some((o) => o.value === sv.value));
-            }
-        } else {
-            newValue = [option];
-            setShowMenu(false);
-        }
-        setSelectedValue(newValue);
-        props.onChange(newValue);
-    }
-
-
-
-    const isSelected = (option: OptionsType) => {
-        if (props.isMulti) {
-            return selectedValue.some((o) => o.value === option.value);
-        } else {
-            return selectedValue !== undefined && selectedValue[0].value === option.value;
-        }
+            window.removeEventListener("click", handler);
+        };
+    });
+    const handleInputClick = (e: any) => {
+        setShowMenu(!showMenu);
     };
-
-    const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setSearchValue(e.target.value)
-    }
-    const getOptions = () => {
-        if (!searchValue) {
-            return props.options
-        }
-        return props.options.filter((option) => option.label.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0)
-    }
-
-    // const handelInputClick = (e: any) => {
-    //     setShowMenu(!showMenu)
-    // }
-
 
     const getDisplay = () => {
         if (!selectedValue || selectedValue.length === 0) {
-            return props.placeHolder
+            return props.placeHolder;
         }
         if (props.isMulti) {
             return (
                 <div className="dropdown-tags">
-                    {
-                        selectedValue.map((option: OptionsType) => (
-                            <div key={option.value} className="dropdown-tag-item">
-                                {option?.label || ''}
-                                <span onClick={(e) => onTagRemove(e, option)} className="dropdown-tag-close">
-                                    <CloseIcon/>
-                                </span>
-                            </div>
-                        ))
-                    }
+                    {selectedValue.map((option: any) => (
+                        <div key={option.value} className="dropdown-tag-item">
+                            {option.label}
+                            <span
+                                onClick={(e) => onTagRemove(e, option)}
+                                className="dropdown-tag-close"
+                            >
+                <CloseIcon />
+              </span>
+                        </div>
+                    ))}
                 </div>
-            )
+            );
         }
-        return selectedValue[0] ? selectedValue[0]?.label : props.placeHolder;
-    }
+        return selectedValue.label;
+    };
 
+    const removeOption = (option: any) => {
+        return selectedValue.filter((o: any) => o.value !== option.value);
+    };
+
+    const onTagRemove = (e: any, option: any) => {
+        e.stopPropagation();
+        const newValue = removeOption(option);
+        setSelectedValue(newValue);
+        props.onChange(newValue);
+    };
+
+    const onItemClick = (option: any) => {
+        let newValue;
+        if (props.isMulti) {
+            if (selectedValue.findIndex((o: any) => o.value === option.value) >= 0) {
+                newValue = removeOption(option);
+            } else {
+                newValue = [...selectedValue, option];
+            }
+        } else {
+            newValue = option;
+        }
+        setSelectedValue(newValue);
+        props.onChange(newValue);
+    };
+
+    const isSelected = (option: any) => {
+        if (props.isMulti) {
+            return selectedValue.filter((o: any) => o.value === option.value).length > 0;
+        }
+
+        if (!selectedValue) {
+            return false;
+        }
+
+        return selectedValue.value === option.value;
+    };
+
+    const onSearch = (e) => {
+        setSearchValue(e.target.value);
+    };
+
+    const getOptions = () => {
+        if (!searchValue) {
+            return options;
+        }
+
+        return options.filter(
+            (option) =>
+                option.label.toLowerCase().indexOf(searchValue.toLowerCase()) >= 0
+        );
+    };
 
     return (
         <div className="dropdown-container">
-            <div ref={inputRef} onClick={() => setShowMenu(!showMenu)} className="dropdown-input">
-                <FormControl>
-                    <InputLabel>{props.placeHolder}</InputLabel>
-                    <Select
-                        multiple={props.isMulti}
-                        value={selectedValue}
-                        onChange={(e: any) => onItemClick(e.target.value)}
-                        renderValue={() => getDisplay()}
-                        open={showMenu}
-                    >
-                        {props.isSearchable && (
-                            <TextField
-                                label="Select..."
-                                value={searchValue}
-                                onChange={onSearch}
-                                inputRef={searchRef}
-                                variant="outlined"
-                            />
-                        )}
-                        {getOptions().map((option) => (
-                            <MenuItem
-                                key={option.value}
-                                value={option.value}
-                                className={isSelected(option) ? "selected" : undefined}
-                            >
-                                {option.label}
-                            </MenuItem>
-                        ))}
-                    </Select>
-                </FormControl>
+            <div ref={inputRef} onClick={handleInputClick} className="dropdown-input">
+                <div className="dropdown-selected-value">{getDisplay()}</div>
+                <div className="dropdown-tools">
+                    <div className="dropdown-tool">
+                        <Icon />
+                    </div>
+                </div>
             </div>
             {showMenu && (
                 <div className="dropdown-menu">
-                    {props.isSearchable && (
+                    {isSearchable && (
                         <div className="search-box">
-                            <TextField
-                                label="Search"
-                                value={searchValue}
-                                onChange={onSearch}
-                                inputRef={searchRef}
-                                variant="outlined"
-                            />
+                            <input onChange={onSearch} value={searchValue} ref={searchRef} />
                         </div>
                     )}
-                    {getOptions().map((option) => (
+                    {getOptions().map((option: any) => (
                         <div
                             onClick={() => onItemClick(option)}
                             key={option.value}

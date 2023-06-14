@@ -1,8 +1,8 @@
 import React from 'react';
-import {OptionsType, OwnSelect} from "./OwnSelect";
+import {OwnSelect} from "./OwnSelect";
 
 export const SelectApp = () => {
-    const options: OptionsType[] = [
+    const options: any = [
         {value: 'green1', label: "Green"},
         {value: 'green2', label: "Red"},
         {value: 'green3', label: "Yellow"},
