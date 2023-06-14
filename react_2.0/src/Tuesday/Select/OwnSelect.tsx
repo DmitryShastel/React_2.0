@@ -23,8 +23,8 @@ export const OwnSelect = (props: OwnSelectType) => {
     const [showMenu, setShowMenu] = useState(false);
     const [selectedValue, setSelectedValue] = useState(props.isMulti ? [] : null);
     const [searchValue, setSearchValue] = useState("");
-    const searchRef = useRef();
-    const inputRef = useRef();
+    const searchRef = useRef<HTMLInputElement>(null);
+    const inputRef = useRef<HTMLInputElement>(null);
 
     useEffect(() => {
         setSearchValue("");
