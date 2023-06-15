@@ -20,7 +20,8 @@ export type OptionsType = {
 export const OwnSelect = (props: OwnSelectType) => {
     const [showMenu, setShowMenu] = useState(false);
     const [selectedValue, setSelectedValue] = useState<OptionsType[] | null>(props.isMulti ? [] : null);
-    const [searchValue, setSearchValue] = useState("");
+    const [searchValue, setSearchValue] = useState<string>("");
+
     const searchRef = useRef<HTMLInputElement>(null);
     const inputRef = useRef<HTMLInputElement>(null);
 
@@ -30,7 +31,6 @@ export const OwnSelect = (props: OwnSelectType) => {
             searchRef.current.focus();
         }
     }, [showMenu, searchRef]);
-
     useEffect(() => {
         const handler = (e: MouseEvent) => {
             if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
@@ -47,7 +47,6 @@ export const OwnSelect = (props: OwnSelectType) => {
     const handleInputClick = () => {
         setShowMenu(!showMenu);
     };
-
     const getDisplay = () => {
         if (!selectedValue || selectedValue.length === 0) {
             return props.placeHolder;
@@ -71,18 +70,15 @@ export const OwnSelect = (props: OwnSelectType) => {
         }
         return selectedValue && selectedValue.length > 0 ? selectedValue[0].label : props.placeHolder;
     };
-
     const removeOption = (option: OptionsType) => {
         return selectedValue!.filter((o) => o.value !== option.value);
     };
-
     const onTagRemove = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, option: OptionsType) => {
         e.stopPropagation();
         const newValue = removeOption(option);
         setSelectedValue(newValue);
         props.onChange(newValue);
     };
-
     const onItemClick = (option: OptionsType) => {
         let newValue: OptionsType[] | null;
         if (props.isMulti) {
@@ -97,7 +93,6 @@ export const OwnSelect = (props: OwnSelectType) => {
         setSelectedValue(newValue);
         props.onChange(newValue);
     };
-
     const isSelected = (option: OptionsType) => {
         if (props.isMulti) {
             return selectedValue!.filter((o) => o.value === option.value).length > 0;
@@ -109,11 +104,9 @@ export const OwnSelect = (props: OwnSelectType) => {
 
         return selectedValue && selectedValue.length > 0 ? selectedValue[0].label : props.placeHolder;
     };
-
     const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value);
     };
-
     const getOptions = () => {
         if (!searchValue) {
             return props.options;
