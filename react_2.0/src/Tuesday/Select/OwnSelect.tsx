@@ -36,6 +36,7 @@ export const OwnSelect = (props: OwnSelectType) => {
         if (showMenu && searchRef.current) {
             searchRef.current.focus();
         }
+
     }, [showMenu, searchRef]);
     //добавляет обработчик клика и удаляет его после использования.
     useEffect(() => {

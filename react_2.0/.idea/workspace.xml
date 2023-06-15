@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e873ad-b727-491e-a4c7-bec12d1788b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Tuesday/Stories/OwnSelect.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tuesday/Select/OwnSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Select/OwnSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Tuesday/Stories/Input.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Stories/Input.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +43,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/dev/Incubator_2.0/React_2.0/react_2.0/src/Tuesday/Select",
+    "last_opened_file_path": "D:/dev/Incubator_2.0/React_2.0/react_2.0",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -55,7 +57,7 @@
       <recent name="D:\dev\Incubator_2.0\React_2.0\react_2.0\src\Tuesday\Select" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.start">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -66,8 +68,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="storybook" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="storybook" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.storybook" />
         <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
@@ -81,7 +94,8 @@
       <option name="presentableId" value="Default" />
       <updated>1686576062204</updated>
       <workItem from="1686576063361" duration="10245000" />
-      <workItem from="1686742344589" duration="13519000" />
+      <workItem from="1686742344589" duration="18484000" />
+      <workItem from="1686829561942" duration="457000" />
     </task>
     <servers />
   </component>
