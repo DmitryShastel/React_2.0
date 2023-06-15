@@ -7,7 +7,6 @@
     <list default="true" id="71e873ad-b727-491e-a4c7-bec12d1788b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tuesday/Select/OwnSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Select/OwnSelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tuesday/Select/SelectApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Select/SelectApp.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,7 +81,7 @@
       <option name="presentableId" value="Default" />
       <updated>1686576062204</updated>
       <workItem from="1686576063361" duration="10245000" />
-      <workItem from="1686742344589" duration="11681000" />
+      <workItem from="1686742344589" duration="13519000" />
     </task>
     <servers />
   </component>

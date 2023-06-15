@@ -18,19 +18,26 @@ export type OptionsType = {
 }
 
 export const OwnSelect = (props: OwnSelectType) => {
-    const [showMenu, setShowMenu] = useState(false);
+    //создание состояния showMenu, которое определяет, отображается ли выпадающий список.
+    const [showMenu, setShowMenu] = useState<boolean>(false);
+    //создание состояния selectedValue, которое определяет выбранные опции в списке
     const [selectedValue, setSelectedValue] = useState<OptionsType[] | null>(props.isMulti ? [] : null);
+    //создание состояния searchValue, которое определяет значение поискового запроса.
     const [searchValue, setSearchValue] = useState<string>("");
 
+    //создание ссылки searchRef на элемент ввода поискового запроса.
     const searchRef = useRef<HTMLInputElement>(null);
+    //создание ссылки inputRef на элемент ввода списка.
     const inputRef = useRef<HTMLInputElement>(null);
 
+    //обновляет состояние searchValue и фокусирует элемент поиска приоткрытии выпадающего списка.
     useEffect(() => {
         setSearchValue("");
         if (showMenu && searchRef.current) {
             searchRef.current.focus();
         }
     }, [showMenu, searchRef]);
+    //добавляет обработчик клика и удаляет его после использования.
     useEffect(() => {
         const handler = (e: MouseEvent) => {
             if (inputRef.current && !inputRef.current.contains(e.target as Node)) {
@@ -44,9 +51,11 @@ export const OwnSelect = (props: OwnSelectType) => {
         };
     }, [inputRef]);
 
+    //обрабатывает клики на элемент списка.
     const handleInputClick = () => {
         setShowMenu(!showMenu);
     };
+    //определяет, какие элементы должны отображаться в списке.
     const getDisplay = () => {
         if (!selectedValue || selectedValue.length === 0) {
             return props.placeHolder;
@@ -70,15 +79,20 @@ export const OwnSelect = (props: OwnSelectType) => {
         }
         return selectedValue && selectedValue.length > 0 ? selectedValue[0].label : props.placeHolder;
     };
+
+    //функция, которая удаляет опцию из выбранных.
     const removeOption = (option: OptionsType) => {
         return selectedValue!.filter((o) => o.value !== option.value);
     };
+    //обрабатывает удаление выбранной опции из списка
     const onTagRemove = (e: React.MouseEvent<HTMLSpanElement, MouseEvent>, option: OptionsType) => {
         e.stopPropagation();
         const newValue = removeOption(option);
         setSelectedValue(newValue);
         props.onChange(newValue);
     };
+
+    //обрабатывает клики на опции в списке
     const onItemClick = (option: OptionsType) => {
         let newValue: OptionsType[] | null;
         if (props.isMulti) {
@@ -93,6 +107,7 @@ export const OwnSelect = (props: OwnSelectType) => {
         setSelectedValue(newValue);
         props.onChange(newValue);
     };
+    //определяет, выбрана ли опция в списке.
     const isSelected = (option: OptionsType) => {
         if (props.isMulti) {
             return selectedValue!.filter((o) => o.value === option.value).length > 0;
@@ -104,9 +119,12 @@ export const OwnSelect = (props: OwnSelectType) => {
 
         return selectedValue && selectedValue.length > 0 ? selectedValue[0].label : props.placeHolder;
     };
+
+    //обрабатывает изменения поискового запроса.
     const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value);
     };
+    //определяет, какие опции должны отображаться в списке.
     const getOptions = () => {
         if (!searchValue) {
             return props.options;
