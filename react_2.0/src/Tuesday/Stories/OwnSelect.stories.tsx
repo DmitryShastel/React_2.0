@@ -1,18 +1,36 @@
 import React from 'react';
-import {OwnSelect} from "../Select/OwnSelect";
+import {OptionsType, OwnSelect} from "../Select/OwnSelect";
 
 
 export default {
-    title: 'OwnStories',
+    title: 'OwnSelect',
     component: OwnSelect
 }
 
+const options: OptionsType[] = [
+    { value: 'green1', label: 'Green' },
+    { value: 'green2', label: 'Red' },
+    { value: 'green3', label: 'Yellow' },
+];
 
-export const OwnSelectStories = () => {
-    return (
-        <div>
-            
-        </div>
-    );
-};
+
+export const SingleSelect = () => (
+    <OwnSelect
+        placeHolder="Select a color"
+        options={options}
+        isMulti={false}
+        isSearchable={true}
+        onChange={(value) => console.log(value)}
+    />
+);
+
+export const MultiSelect = () => (
+    <OwnSelect
+        placeHolder="Select colors"
+        options={options}
+        isMulti={true}
+        isSearchable={true}
+        onChange={(value) => console.log(value)}
+    />
+);
 

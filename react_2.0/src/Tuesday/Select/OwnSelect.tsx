@@ -4,7 +4,7 @@ import "./Dropdown.css";
 import {CloseIcon, Icons} from "./Icons";
 
 
-type OwnSelectType = {
+export type OwnSelectType = {
     placeHolder: string
     options: OptionsType[]
     isMulti: boolean
@@ -80,7 +80,6 @@ export const OwnSelect = (props: OwnSelectType) => {
         }
         return selectedValue && selectedValue.length > 0 ? selectedValue[0].label : props.placeHolder;
     };
-
     //функция, которая удаляет опцию из выбранных.
     const removeOption = (option: OptionsType) => {
         return selectedValue!.filter((o) => o.value !== option.value);
@@ -92,7 +91,6 @@ export const OwnSelect = (props: OwnSelectType) => {
         setSelectedValue(newValue);
         props.onChange(newValue);
     };
-
     //обрабатывает клики на опции в списке
     const onItemClick = (option: OptionsType) => {
         let newValue: OptionsType[] | null;
@@ -120,7 +118,6 @@ export const OwnSelect = (props: OwnSelectType) => {
 
         return selectedValue && selectedValue.length > 0 ? selectedValue[0].label : props.placeHolder;
     };
-
     //обрабатывает изменения поискового запроса.
     const onSearch = (e: React.ChangeEvent<HTMLInputElement>) => {
         setSearchValue(e.target.value);
