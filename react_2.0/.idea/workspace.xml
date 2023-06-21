@@ -5,9 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e873ad-b727-491e-a4c7-bec12d1788b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Tuesday/Select/Select.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tuesday/Select/Select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Select/Select.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tuesday/Stories/Select.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Stories/Select.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,7 +42,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/dev/Incubator_2.0/React_2.0/react_2.0/src/Tuesday/Stories",
+    "last_opened_file_path": "D:/dev/Incubator_2.0/React_2.0/react_2.0/src/Tuesday/Select",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -53,8 +53,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\dev\Incubator_2.0\React_2.0\react_2.0\src\Tuesday\Stories" />
       <recent name="D:\dev\Incubator_2.0\React_2.0\react_2.0\src\Tuesday\Select" />
+      <recent name="D:\dev\Incubator_2.0\React_2.0\react_2.0\src\Tuesday\Stories" />
     </key>
   </component>
   <component name="RunManager" selected="npm.start">
@@ -96,7 +96,7 @@
       <workItem from="1686576063361" duration="10245000" />
       <workItem from="1686742344589" duration="18484000" />
       <workItem from="1686829561942" duration="1200000" />
-      <workItem from="1687244830111" duration="6202000" />
+      <workItem from="1687244830111" duration="6747000" />
     </task>
     <servers />
   </component>
