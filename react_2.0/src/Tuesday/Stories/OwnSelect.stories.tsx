@@ -16,7 +16,7 @@ const options: OptionsType[] = [
 
 export const SingleSelect = () => (
     <OwnSelect
-        placeHolder="Select a color"
+        placeHolder="Select value"
         options={options}
         isMulti={false}
         isSearchable={true}
@@ -26,7 +26,7 @@ export const SingleSelect = () => (
 
 export const MultiSelect = () => (
     <OwnSelect
-        placeHolder="Select colors"
+        placeHolder="Select value"
         options={options}
         isMulti={true}
         isSearchable={true}
