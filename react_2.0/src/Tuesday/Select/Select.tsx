@@ -16,8 +16,8 @@ type SelectPropsType = {
 export const Select = (props: SelectPropsType) => {
 
     const [active, setActive] = useState(false)
-
     const selectedItem = props.items.find(i => i.value === props.value)
+    const showItems = () => setActive(true)
 
     return (
         <>
@@ -27,10 +27,13 @@ export const Select = (props: SelectPropsType) => {
                 <option value="">Kiev</option>
             </select>
             <div className={s.select + '' + (active ? s.active : '')}>
-                <h3>{selectedItem && selectedItem.title}</h3>
-                <div className={s.items}>
-                    {props.items.map(i => <div key={i.value}>{i.title}</div>)}
-                </div>
+                <h3 onClick={showItems}>{selectedItem && selectedItem.title}</h3>
+                {
+                    active &&
+                    <div className={s.items}>
+                        {props.items.map(i => <div key={i.value}>{i.title}</div>)}
+                    </div>
+                }
             </div>
 
         </>
