@@ -9,11 +9,10 @@ export default {
 
 
 export const BaseExample = () => <Select
-    value={action('Value is selected')}
-    onChange={() => {
-    }}
+    value={'1'}
+    onChange={action('Value is selected')}
     items={[
         {value: '1', title: "Minsk"},
         {value: '2', title: "Moscow"},
         {value: '3', title: "Kiev"},
-    ]}/>   
+    ]}/>
