@@ -6,7 +6,7 @@ type ItemType = {
 }
 
 type SelectPropsType = {
-    value: any
+    value?: any
     onChange: (value: any) => void
     items: ItemType[]
 }
@@ -20,7 +20,7 @@ export const Select = (props: SelectPropsType) => {
 
         <div>
             <h3>{selectedItem && selectedItem.title}</h3>
-            {props.items.map(i => <div>{i.title}</div>)}
+            {props.items.map(i => <div key={i.value}>{i.title}</div>)}
         </div>
 
     );
