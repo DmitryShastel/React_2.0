@@ -1,14 +1,12 @@
-.select {
+.select .main {
     border: 1px solid black;
+    display: inline-block;
+    min-height: 20px;
+    min-width: 50px;
 }
 
 .items {
-    display: none;
     position: absolute;
     padding: 5px;
     border: 1px black solid;
-}
-
-.select.active  .items {
-    display: block;
 }

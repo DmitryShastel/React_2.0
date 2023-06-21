@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {Select} from "../Select/Select";
 import {action} from "@storybook/addon-actions";
 
@@ -8,19 +8,29 @@ export default {
 }
 
 
-export const WithValue = () => <Select
-    value={'2'}
-    onChange={action('Value is selected')}
-    items={[
-        {value: '1', title: "Minsk"},
-        {value: '2', title: "Moscow"},
-        {value: '3', title: "Kiev"},
-    ]}/>
+export const WithValue = () => {
+    const [value, setValue] = useState('2')
+    return <>
+        <Select
+            value={value}
+            onChange={action('Value is selected')}
+            items={[
+                {value: '1', title: "Minsk"},
+                {value: '2', title: "Moscow"},
+                {value: '3', title: "Kiev"},
+            ]}/> </>
+}
 
-export const WithoutValue = () => <Select
-    onChange={action('Value is selected')}
-    items={[
-        {value: '1', title: "Minsk"},
-        {value: '2', title: "Moscow"},
-        {value: '3', title: "Kiev"},
-    ]}/>
+export const WithoutValue = () => {
+    const [value, setValue] = useState(null)
+    return <>
+        <Select
+            onChange={action('Value is selected')}
+            value={null}
+            items={[
+                {value: '1', title: "Minsk"},
+                {value: '2', title: "Moscow"},
+                {value: '3', title: "Kiev"},
+            ]}/>
+    </>
+}
