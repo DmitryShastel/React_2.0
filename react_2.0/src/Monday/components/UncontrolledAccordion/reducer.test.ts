@@ -36,12 +36,9 @@ test('reducer should change value to error', () => {
         collapsed: true
     }
 
-    //action
-
-
     //expected result
     expect(() => {
-        reducer(testState, {type: 'FAKETYPE'})
+        reducer(testState, {type: 'FAKETYPE'})   
     }).toThrowError()
 })
 
