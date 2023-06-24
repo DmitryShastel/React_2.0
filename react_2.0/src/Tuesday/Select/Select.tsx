@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState, KeyboardEvent} from 'react';
 import s from './Select.module.css'
 
 type ItemType = {
@@ -29,10 +29,21 @@ export const Select = (props: SelectPropsType) => {
         toggleItems()
     }
 
+    const onKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
+        for (let i = 0; i < props.items.length; i++) {
+            if (props.items[i].value === hoveredElementValue) {
+                if (props.items[i + 1]) {
+                    props.onChange(props.items[i + 1].value)
+                    break
+                }
+            }
+        }
+    }
+
 
     return (
         <>
-            <div className={s.select}>
+            <div className={s.select} onKeyUp={onKeyUp} tabIndex={0}>
                 <span className={s.main} onClick={toggleItems}>{selectedItem && selectedItem.title}</span>
                 {
                     active &&
