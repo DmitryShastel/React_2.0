@@ -1,6 +1,5 @@
 import React, {useState} from 'react';
 import {Select} from "../Select/Select";
-import {action} from "@storybook/addon-actions";
 
 export default {
     title: 'Select',
@@ -13,7 +12,7 @@ export const WithValue = () => {
     return <>
         <Select
             value={value}
-            onChange={action('Value is selected')}
+            onChange={setValue}
             items={[
                 {value: '1', title: "Minsk"},
                 {value: '2', title: "Moscow"},
@@ -25,7 +24,7 @@ export const WithoutValue = () => {
     const [value, setValue] = useState(null)
     return <>
         <Select
-            onChange={action('Value is selected')}
+            onChange={setValue}
             value={null}
             items={[
                 {value: '1', title: "Minsk"},

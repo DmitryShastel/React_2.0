@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="71e873ad-b727-491e-a4c7-bec12d1788b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tuesday/Select/Select.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Select/Select.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tuesday/Select/Select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Select/Select.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Tuesday/Stories/Select.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Stories/Select.stories.tsx" afterDir="false" />
     </list>
@@ -43,12 +42,12 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "D:/dev/Incubator_2.0/React_2.0/react_2.0/src/Tuesday/Select",
+    "last_opened_file_path": "C:/incubator/Incubator_2.0/React_2.0/react_2.0",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "D:\\dev\\Incubator_2.0\\React_2.0\\react_2.0\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "C:\\incubator\\Incubator_2.0\\React_2.0\\react_2.0\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -98,6 +97,7 @@
       <workItem from="1686742344589" duration="18484000" />
       <workItem from="1686829561942" duration="1200000" />
       <workItem from="1687244830111" duration="10069000" />
+      <workItem from="1687582773956" duration="1014000" />
     </task>
     <servers />
   </component>
