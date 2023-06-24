@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e873ad-b727-491e-a4c7-bec12d1788b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Monday/components/UncontrolledAccordion/reducer.test.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Monday/components/UncontrolledAccordion/UncontrolledAccordion.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Monday/components/UncontrolledAccordion/UncontrolledAccordion.tsx" afterDir="false" />
     </list>
@@ -17,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -45,6 +47,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/incubator/Incubator_2.0/React_2.0/react_2.0/node_modules/react-scripts",
     "nodejs_package_manager_path": "yarn",
     "ts.external.directory.path": "C:\\incubator\\Incubator_2.0\\React_2.0\\react_2.0\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
@@ -56,7 +59,20 @@
       <recent name="D:\dev\Incubator_2.0\React_2.0\react_2.0\src\Tuesday\Stories" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start">
+  <component name="RunManager" selected="Jest.reducer should change value to opposite value">
+    <configuration name="reducer should change value to opposite value" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Monday/components/UncontrolledAccordion/reducer.test.ts" />
+      <test-names>
+        <test-name value="reducer should change value to opposite value" />
+      </test-names>
+      <method v="2" />
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -79,6 +95,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Jest.reducer should change value to opposite value" />
         <item itemvalue="npm.storybook" />
         <item itemvalue="npm.start" />
       </list>
@@ -96,7 +113,7 @@
       <workItem from="1686742344589" duration="18484000" />
       <workItem from="1686829561942" duration="1200000" />
       <workItem from="1687244830111" duration="10069000" />
-      <workItem from="1687582773956" duration="9525000" />
+      <workItem from="1687582773956" duration="14434000" />
     </task>
     <servers />
   </component>

@@ -1,5 +1,8 @@
 import React, {useReducer} from 'react';
 
+
+
+
 type AccordionType = {
     title: string
 }
@@ -9,18 +12,20 @@ type ActionType = {
     type: string
 }
 
-type StateType = {
+export type StateType = {
     collapsed: boolean
 }
 
-const TOGGLE_CONSTANT = 'TOGGLE-COLLAPSED'
+export const TOGGLE_COLLAPSED = 'TOGGLE-COLLAPSED'
 
-const reducer = (state: StateType, action: ActionType): StateType => {
+export const reducer = (state: StateType, action: ActionType): StateType => {
 
     switch (action.type) {
-        case TOGGLE_CONSTANT:
-            state.collapsed = !state.collapsed
-            return state
+        case TOGGLE_COLLAPSED:
+            return {
+                ...state,
+                collapsed: !state.collapsed
+            }
         default:
             throw new Error('Bad action type')
     }
@@ -30,19 +35,19 @@ const reducer = (state: StateType, action: ActionType): StateType => {
 
 export const UncontrolledAccordion = (props: AccordionType) => {
 
-    let [collapsed, dispatch] = useReducer(reducer, {collapsed: false})
+    let [state, dispatch] = useReducer(reducer, {collapsed: false})
 
     return (
         <div>
             {/*<AccordionTitle title={props.title} onClick={() => {setCollapsed(!collapsed)}}/>*/}
             <AccordionTitle title={props.title} onClick={() => {
-                dispatch({type: TOGGLE_CONSTANT})
+                dispatch({type: TOGGLE_COLLAPSED})
             }}/>
             {/*<button onClick={() => {*/}
             {/*    setCollapsed(true)*/}
             {/*}}>*/}
             {/*</button>*/}
-            {!collapsed && <AccordionBody/>}
+            {!state.collapsed && <AccordionBody/>}
         </div>
     )
 
