@@ -32,8 +32,12 @@ export const Select = (props: SelectPropsType) => {
                     active &&
                     <div className={s.items}>
                         {
-                            props.items.map(i => <div key={i.value}
-                                                      onClick={() => {onItemClick(i.value)}}
+                            props.items.map(i => <div
+                                className={s.item + ' ' + (selectedItem === i ? s.selected : '')}
+                                key={i.value}
+                                onClick={() => {
+                                    onItemClick(i.value)
+                                }}
                             >{i.title}</div>)}
                     </div>
                 }
