@@ -19,18 +19,14 @@ export const Select = (props: SelectPropsType) => {
     const [hoveredElementValue, setHoveredElementValue] = useState(props.value)
     const selectedItem = props.items.find(i => i.value === props.value)
     const hoveredItem = props.items.find(i => i.value === hoveredElementValue)
-
-
     useEffect(() => {
         setHoveredElementValue(props.value)
     }, [props.value])
-
     const toggleItems = () => setActive(!active)
     const onItemClick = (value: any) => {
         props.onChange(value);
         toggleItems()
     }
-
     const onKeyUp = (e: KeyboardEvent<HTMLDivElement>) => {
         if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
             for (let i = 0; i < props.items.length; i++) {
