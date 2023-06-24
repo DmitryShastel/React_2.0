@@ -1,12 +1,23 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 
 type AccordionType = {
     title: string
 }
 
+
+type ActionType = {
+    type: string
+}
+
+
+const reducer = (state: boolean, action: ActionType) => {
+
+    return state
+}
+
 export const UncontrolledAccordion = (props: AccordionType) => {
 
-    let [collapsed, setCollapsed] = useState(false)
+    let [collapsed, dispatch] = useReducer(reducer, false)
 
     return (
         <div>
@@ -31,7 +42,9 @@ type AccordionTitleType = {
 
 const AccordionTitle = (props: AccordionTitleType) => {
     return (
-        <h4 onClick={() => {props.onClick()}}>{props.title}</h4>
+        <h4 onClick={() => {
+            props.onClick()
+        }}>{props.title}</h4>
     )
 }
 const AccordionBody = () => {
