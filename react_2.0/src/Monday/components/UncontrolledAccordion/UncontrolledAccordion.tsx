@@ -9,13 +9,18 @@ type ActionType = {
     type: string
 }
 
+type StateType = {
+    collapsed: boolean
+}
+
 const TOGGLE_CONSTANT = 'TOGGLE-COLLAPSED'
 
-const reducer = (state: boolean, action: ActionType) => {
+const reducer = (state: StateType, action: ActionType): StateType => {
 
     switch (action.type) {
         case TOGGLE_CONSTANT:
-            return !state
+            state.collapsed = !state.collapsed
+            return state
         default:
             throw new Error('Bad action type')
     }
@@ -25,7 +30,7 @@ const reducer = (state: boolean, action: ActionType) => {
 
 export const UncontrolledAccordion = (props: AccordionType) => {
 
-    let [collapsed, dispatch] = useReducer(reducer, false)
+    let [collapsed, dispatch] = useReducer(reducer, {collapsed: false})
 
     return (
         <div>
