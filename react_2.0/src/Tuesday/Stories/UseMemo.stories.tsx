@@ -5,7 +5,7 @@ export default {
 }
 
 
-export const Example1 = () => {
+export const DifficultCountingExample = () => {
 
     const [a, setA] = useState<number>(5)
     const [b, setB] = useState<number>(5)
@@ -44,5 +44,28 @@ export const Example1 = () => {
         <div>
             Result b: {resultB}
         </div>
+    </>
+}
+
+
+const UsersSecret = (props: { users: Array<string> }) => {
+    console.log('UsersSecret')
+    return <div>
+        {props.users.map((u, i) => <div key={i}>{u}</div>)}
+    </div>
+}
+
+const Users = React.memo(UsersSecret)
+
+export const HelpsToReactMemo = () => {
+    console.log('HelpsToReactMemo')
+    const [counter, setCounter] = useState(0)
+    const [users, setUsers] = useState(['Dima', 'Valera'])
+
+
+    return <>
+        <button onClick={() => setCounter(counter + 1)}>+</button>
+        {counter}
+        <Users users={users}/>
     </>
 }
