@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71e873ad-b727-491e-a4c7-bec12d1788b3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Tuesday/Stories/UseMemo.stories.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Tuesday/Stories/ReactMemo.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Stories/ReactMemo.stories.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +16,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -43,7 +43,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jsx.switch.disabled": "true",
-    "last_opened_file_path": "C:/incubator/Incubator_2.0/React_2.0/react_2.0",
+    "last_opened_file_path": "D:/dev/Incubator_2.0/React_2.0/react_2.0",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -113,7 +113,8 @@
       <workItem from="1686829561942" duration="1200000" />
       <workItem from="1687244830111" duration="10069000" />
       <workItem from="1687582773956" duration="14580000" />
-      <workItem from="1687775669823" duration="5404000" />
+      <workItem from="1687775669823" duration="6208000" />
+      <workItem from="1687964453636" duration="423000" />
     </task>
     <servers />
   </component>
