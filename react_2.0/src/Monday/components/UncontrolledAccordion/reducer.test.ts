@@ -14,7 +14,6 @@ test('reducer should change value to true', () => {
     //expected result
     expect(newState.collapsed).toBe(true)
 })
-
 test('reducer should change value to false', () => {
 
     //data
@@ -28,7 +27,6 @@ test('reducer should change value to false', () => {
     //expected result
     expect(newState.collapsed).toBe(false)
 })
-
 test('reducer should change value to error', () => {
 
     //data
@@ -38,7 +36,7 @@ test('reducer should change value to error', () => {
 
     //expected result
     expect(() => {
-        reducer(testState, {type: 'FAKETYPE'})   
+        reducer(testState, {type: 'FAKETYPE'})
     }).toThrowError()
 })
 
