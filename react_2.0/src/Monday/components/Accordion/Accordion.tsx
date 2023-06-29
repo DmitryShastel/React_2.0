@@ -15,6 +15,8 @@ export type AccordionType = {
     color?: string
 }
 
+
+
 export const Accordion = (props: AccordionType) => {
 
     return (

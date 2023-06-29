@@ -6,7 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="71e873ad-b727-491e-a4c7-bec12d1788b3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/Monday/components/UncontrolledAccordion/reducer.test.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/Monday/components/UncontrolledAccordion/reducer.test.ts" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/src/Tuesday/Stories/UseMemo.stories.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Tuesday/Stories/UseMemo.stories.tsx" afterDir="false" />
+>>>>>>> 741327b109e55162c8f7ecaf16e62a3b54f02bc1
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript JSX File" />
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -42,13 +46,18 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+<<<<<<< HEAD
     "last_opened_file_path": "C:/incubator/Incubator_2.0/Native_JS_2.0/Folder_1/native_js_2.0",
+=======
+    "jsx.switch.disabled": "true",
+    "last_opened_file_path": "D:/dev/Incubator_2.0/React_2.0/react_2.0",
+>>>>>>> 741327b109e55162c8f7ecaf16e62a3b54f02bc1
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs.jest.jest_package": "C:/incubator/Incubator_2.0/React_2.0/react_2.0/node_modules/react-scripts",
     "nodejs_package_manager_path": "yarn",
-    "ts.external.directory.path": "C:\\incubator\\Incubator_2.0\\React_2.0\\react_2.0\\node_modules\\typescript\\lib",
+    "ts.external.directory.path": "D:\\dev\\Incubator_2.0\\React_2.0\\react_2.0\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -61,7 +70,6 @@
   <component name="RunManager" selected="Jest.reducer should change value to opposite value">
     <configuration name="reducer should change value to opposite value" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
       <node-interpreter value="project" />
-      <node-options value="" />
       <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
       <working-dir value="$PROJECT_DIR$" />
       <envs />
@@ -94,9 +102,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Jest.reducer should change value to opposite value" />
         <item itemvalue="npm.storybook" />
         <item itemvalue="npm.start" />
+        <item itemvalue="Jest.reducer should change value to opposite value" />
       </list>
     </recent_temporary>
   </component>
@@ -112,7 +120,13 @@
       <workItem from="1686742344589" duration="18484000" />
       <workItem from="1686829561942" duration="1200000" />
       <workItem from="1687244830111" duration="10069000" />
+<<<<<<< HEAD
       <workItem from="1687582773956" duration="15808000" />
+=======
+      <workItem from="1687582773956" duration="14580000" />
+      <workItem from="1687775669823" duration="6208000" />
+      <workItem from="1687964453636" duration="3437000" />
+>>>>>>> 741327b109e55162c8f7ecaf16e62a3b54f02bc1
     </task>
     <servers />
   </component>
