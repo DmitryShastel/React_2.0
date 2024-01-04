@@ -1,17 +1,13 @@
 import React from 'react';
 import './App.css';
-import {SelectApp} from "./Tuesday/Select/SelectApp";
+import {UseCallback} from "./Wednesday/useCallback";
 
 
-function App() {
+export function App() {
 
     return (
-        <div >
-            <SelectApp/>
+        <div>
+            <UseCallback/>
         </div>
     );
 }
-
-
-export default App;
-
