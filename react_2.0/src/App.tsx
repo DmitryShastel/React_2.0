@@ -1,13 +1,12 @@
 import React from 'react';
 import './App.css';
-import {UseCallback} from "./Wednesday/useCallback";
+import {UseEffectComponent} from "./Wednesday/UseEffect";
 
 
 export function App() {
-
     return (
         <div>
-            <UseCallback/>
+            <UseEffectComponent/>
         </div>
     );
 }
