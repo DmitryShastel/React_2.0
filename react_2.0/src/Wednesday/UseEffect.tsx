@@ -1,19 +1,43 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 
 export const UseEffectComponent = () => {
-    console.log('UseEffectComponent')
+    const [currentTime, setCurrentTime] = useState('');
 
-    const [counter, setCounter] = useState(1)
+    const startTime = () => {
+        let today = new Date();
+        let hr = today.getHours();
+        let min = today.getMinutes();
+        let sec = today.getSeconds();
+
+        let ap = (hr < 12) ? "AM" : "PM";
+        hr = (hr === 0) ? 12 : hr;
+        hr = (hr > 12) ? hr - 12 : hr;
+
+        hr = checkTime(hr);
+        min = checkTime(min);
+        sec = checkTime(sec);
+
+        setCurrentTime(`${hr}:${min}:${sec} ${ap}`);
+
+       setTimeout(function () {
+            startTime();
+        }, 500);
+    };
 
     useEffect(() => {
-        console.log('UseEffect')
-    })
+        startTime();
+    }, []);
 
+    function checkTime(i: any) {
+        if (i < 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
 
     return (
         <div>
-            Hello, {counter}
-            <button onClick={() => setCounter(counter + 1)}>+</button>
+            {currentTime}
         </div>
     );
 };
