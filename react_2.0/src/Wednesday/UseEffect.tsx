@@ -24,16 +24,16 @@ export const UseEffectComponent = () => {
         }, 500);
     };
 
-    useEffect(() => {
-        startTime();
-    }, []);
-
     function checkTime(i: any) {
         if (i < 10) {
             i = "0" + i;
         }
         return i;
     }
+
+    useEffect(() => {
+        startTime();
+    }, []);
 
     return (
         <div>

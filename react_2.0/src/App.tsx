@@ -1,12 +1,12 @@
 import React from 'react';
 import './App.css';
-import {UseEffectComponent} from "./Wednesday/UseEffect";
+import {Clock} from "./Wednesday/Clock";
 
 
 export function App() {
     return (
         <div>
-            <UseEffectComponent/>
+            <Clock/>
         </div>
     );
 }
