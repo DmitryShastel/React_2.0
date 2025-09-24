@@ -1,10 +1,16 @@
-.App {
-    padding: 45px;
-}
+/*.App {*/
+/*    padding: 45px;*/
+/*}*/
 
-.App {
-    font-family: sans-serif;
-    text-align: center;
-    display: flex;
-    column-gap: 10px;
+/*.App {*/
+/*    font-family: sans-serif;*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    column-gap: 10px;*/
+/*}*/
+
+.App{
+    margin: 0;
+    padding: 0;
+    background-color: white;
 }

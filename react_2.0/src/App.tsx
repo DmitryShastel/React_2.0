@@ -1,11 +1,11 @@
 import './App.css';
-import { Clock } from "./Wednesday/Clock";
+import {MainScreen} from "./YouTube/VideoPlayerPage/MainScreen/MainScreen";
 
 
 export function App() {
     return (
         <div>
-             <Clock/>
+             <MainScreen/>
         </div>
     );
 }
