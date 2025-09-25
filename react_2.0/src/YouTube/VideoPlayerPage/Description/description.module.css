@@ -1,5 +1,6 @@
 .description {
     width: 100%;
+    height: auto;
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
@@ -74,3 +75,50 @@
     background: none;
     cursor: pointer;
 }
+
+@media (max-width: 768px) {
+    .description {
+        flex-direction: column;
+        gap: clamp(16px, 2vw, 24px);
+    }
+
+    .logo {
+        width: 100%;
+    }
+
+    .text span {
+        width: 100%;
+        font-size: clamp(14px, 1.8vw, 15px);
+    }
+
+    .subscription {
+        position: relative;
+        align-self: flex-start;
+        margin-top: 0;
+    }
+
+    .subscription button {
+        position: absolute;
+        top: -285px;
+        left: 200px
+    }
+}
+
+@media (max-width: 450px) {
+    .description {
+        margin-top: 15px;
+    }
+
+    .subscription {
+        position: relative;
+        align-self: flex-start;
+        margin-top: 0;
+    }
+
+    .subscription button {
+        position: absolute;
+        top: -265px;
+        left: 260px
+    }
+}
+

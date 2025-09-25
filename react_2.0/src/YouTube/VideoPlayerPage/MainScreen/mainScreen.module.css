@@ -1,20 +1,22 @@
 .container {
     display: grid;
-    gap: 20px;
+    gap: 8px;
     min-height: 100vh;
-    padding: 20px;
+    padding: 8px;
     margin: 0 auto;
-
-    grid-template-areas:
-        "header header"
-        "player playlist"
-        "description playlist";
-    grid-template-columns: 1fr 367px;
-    grid-template-rows: auto 1fr auto;
-    max-width: 1920px;
-    width: 100%;
     box-sizing: border-box;
-    position: relative;
+    width: 100%;
+    grid-template-areas:
+        "header"
+        "player"
+        "description"
+        "playlist";
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+}
+
+.playPlaylistBlock::-webkit-scrollbar {
+    display: none; /* Chrome/Safari/Opera */
 }
 
 .playHeaderBlock {
@@ -36,8 +38,67 @@
 
 .playPlaylistBlock {
     grid-area: playlist;
-    position: sticky;
-    align-self: start;
+    max-height: 400px;
     overflow-y: auto;
+}
+
+/* 450px и выше */
+@media (min-width: 450px) {
+    .container {
+        gap: 12px;
+        padding: 12px;
+    }
+
+    .playPlaylistBlock {
+        max-height: 500px;
+    }
+}
+
+/* 768px и выше - планшеты */
+@media (min-width: 768px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "player playlist"
+            "description playlist";
+        grid-template-columns: 1fr 320px;
+        grid-template-rows: auto auto auto;
+        gap: 16px;
+        padding: 16px;
+        max-width: 1200px;
+    }
+
+    .playPlaylistBlock {
+        position: sticky;
+        top: 16px;
+        align-self: start;
+        height: calc(100vh - 32px);
+        max-height: none;
+    }
+
+    .playPlaylistBlock::-webkit-scrollbar {
+        display: none;
+
+    }
+
+}
+
+/* 1740px и выше - десктоп */
+@media (min-width: 1740px) {
+    .container {
+        grid-template-columns: 1fr 367px;
+        gap: 20px;
+        padding: 20px;
+        max-width: 1920px;
+    }
+
+    .playPlaylistBlock {
+        height: calc(100vh - 40px);
+        top: 20px;
+    }
+
+    .playPlaylistBlock::-webkit-scrollbar {
+        display: none;
+    }
 }
 
