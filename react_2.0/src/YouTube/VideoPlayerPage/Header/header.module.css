@@ -8,7 +8,6 @@
 }
 
 .burger {
-    margin-left: 25px;
     flex-shrink: 0;
 }
 
@@ -26,7 +25,7 @@
     width: 116px;
     height: 25px;
     flex-shrink: 0;
-    margin: 0 50px;
+    margin: 0 30px;
 }
 
 .search {

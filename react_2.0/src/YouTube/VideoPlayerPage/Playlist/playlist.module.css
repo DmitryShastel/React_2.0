@@ -1,7 +1,76 @@
 .playlist {
-    width: 367px;
-    height: 830px;
-    border: 1px solid blue;
+    width: 100%;
+    max-width: 367px;
+    height: auto;
     box-sizing: border-box;
-    flex-shrink: 0;
+}
+
+.settings{
+    display: flex;
+    justify-content: space-between;
+}
+
+.next button{
+    border: none;
+    background: none;
+    font-size: clamp(14px, 1.8vw, 36px);
+    font-family: 'Mulish', sans-serif;
+    color: #192646;
+    cursor: pointer;
+}
+
+.autoplay{
+    display: flex;
+    align-items: center;
+}
+
+.autoplay button {
+    border: none;
+    background: none;
+    font-size: clamp(14px, 1.8vw, 16px);
+    font-family: 'Mulish', sans-serif;
+    color: #192646;
+    cursor: pointer;
+}
+
+.autoplay img {
+    width: 44px;
+    height: 28px;
+}
+
+.video{
+    position: relative;
+    margin-top: 15px;
+}
+
+.time{
+    display: flex;
+    justify-content: center;
+    width: 47px;
+    height: 24px;
+    background-color: #000000;
+    color:#FFFFFF;
+    border-radius: 20px;
+    position: absolute;
+    top: 170px;
+    left: 300px;
+    opacity: 30%;
+}
+
+.title{
+    margin-top: 10px;
+    font-size: clamp(14px, 1.8vw, 18px);
+    font-family: 'Mulish', sans-serif;
+    font-weight: 700;
+    color: #192646;
+}
+
+.statistics{
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0 15px 0;
+    font-size: clamp(14px, 1.8vw, 18px);
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    color: #C2C2C2;
 }
