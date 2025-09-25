@@ -1,0 +1,7 @@
+.playlist {
+    width: 367px;
+    height: 830px;
+    border: 1px solid blue;
+    box-sizing: border-box;
+    flex-shrink: 0;
+}

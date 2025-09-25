@@ -1,8 +1,9 @@
 import React from 'react';
+import s from './description.module.css'
 
 export const Description = () => {
     return (
-        <div>
+        <div className={s.description}>
 
         </div>
     );

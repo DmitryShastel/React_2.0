@@ -1,0 +1,90 @@
+.player {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+    max-width: 1363px;
+    /*border: 1px solid purple;*/
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: clamp(16px, 2vw, 24px);
+}
+
+.player img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: clamp(8px, 1vw, 12px);
+}
+
+.titleOfVideo {
+    font-size: clamp(20px, 3vw, 36px);
+    font-weight: 700;
+    line-height: 100%;
+    color: #192646;
+    font-family: 'Mulish', sans-serif;
+    margin: 0;
+    text-align: left;
+}
+
+.statistics {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: clamp(12px, 1.5vw, 20px);
+}
+
+.views {
+    font-size: clamp(14px, 1.5vw, 20px);
+    font-weight: 400;
+    line-height: 100%;
+    font-family: 'Mulish', sans-serif;
+    color: #C2C2C2;
+}
+
+.likes {
+    display: flex;
+    align-items: center;
+    gap: clamp(16px, 2vw, 32px);
+    flex-wrap: wrap;
+}
+
+.like {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #EBEBEB;
+    border-radius: 20px;
+    opacity: 30%;
+    gap: clamp(4px, 0.5vw, 8px);
+    padding: 8px 15px;
+    min-width: fit-content;
+}
+
+.likeText{
+    font-family: 'Mulish', sans-serif;
+    font-weight: 400;
+    font-size: clamp(14px, 1.5vw, 16px);
+    line-height: 100%;
+    color: #192646;
+}
+
+.like img {
+    width: clamp(20px, 2.5vw, 24px);
+    height: clamp(20px, 2.5vw, 24px);
+}
+
+.likes .image {
+    width: 28px;
+    height: 6px;
+    object-fit: contain;
+}
+
+.divider {
+    width: 100%;
+    height: 2px;
+    background-color: #D8D8D880;
+    margin-top: clamp(16px, 0.5vw, 20px);
+}

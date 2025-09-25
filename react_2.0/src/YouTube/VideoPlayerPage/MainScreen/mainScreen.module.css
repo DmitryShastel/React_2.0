@@ -1,6 +1,44 @@
 .container {
-    width: 1920px;
-    height: 1200px;
-    overflow: hidden;
+    display: grid;
+    gap: 20px;
+    min-height: 100vh;
+    padding: 20px;
+    margin: 0 auto;
+
+    grid-template-areas:
+        "header header"
+        "player playlist"
+        "description playlist";
+    grid-template-columns: 1fr 367px;
+    grid-template-rows: auto minmax(400px, auto) auto;
+    max-width: 1920px;
+    width: 100%;
+    box-sizing: border-box;
     position: relative;
 }
+
+.playHeaderBlock {
+    grid-area: header;
+    max-width: 100%;
+}
+
+.playScreenBlock {
+    grid-area: player;
+    max-width: 100%;
+}
+
+.playDescriptionBlock {
+    grid-area: description;
+    max-width: 100%;
+}
+
+.playPlaylistBlock {
+    grid-area: playlist;
+    position: sticky;
+    top: 20px;
+    align-self: start;
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
+}
+
