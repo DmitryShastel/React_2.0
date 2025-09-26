@@ -83,6 +83,51 @@
 
 }
 
+/* 1450px и выше - промежуточный десктоп */
+@media (min-width: 1450px) {
+    .container {
+        grid-template-areas:
+            "header header"
+            "player playlist"
+            "description playlist";
+        grid-template-columns: 1fr 340px;
+        grid-template-rows: auto auto auto;
+        gap: 5px;
+        padding: 5px;
+        max-width: 1450px;
+        margin: 0 auto;
+    }
+
+    .playHeaderBlock {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    .playScreenBlock {
+        padding: 1px;
+        margin: 1px;
+    }
+
+    .playDescriptionBlock {
+        padding: 1px;
+        margin: 1px;
+    }
+
+    .playPlaylistBlock {
+        position: sticky;
+        top: 5px;
+        align-self: start;
+        height: calc(100vh - 4px);
+        max-height: none;
+        padding: 1px;
+        margin: 1px;
+    }
+
+    .playPlaylistBlock::-webkit-scrollbar {
+        display: none;
+    }
+}
+
 /* 1740px и выше - десктоп */
 @media (min-width: 1740px) {
     .container {
