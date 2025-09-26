@@ -394,7 +394,12 @@ body {
     }
 
     .search {
-        max-width: 600px;
+        position: relative;
+    }
+    .search img {
+        position: absolute;
+        left: 850px;
+        top: 50%;
     }
 
     .sidebar {
@@ -626,8 +631,8 @@ body {
 
     .time{
         position: absolute;
-        bottom: 60px;
-        left: 195px;
+        bottom: 80px;
+        left: 130px;
     }
 
     .recommendedvideo{
@@ -636,8 +641,8 @@ body {
 
     .recommendedtime{
         position: absolute;
-        bottom: 75px;
-        left: 195px;
+        bottom: 95px;
+        left: 125px;
     }
 
     .subscription {
@@ -647,7 +652,7 @@ body {
     .buttons-subscription{
         position: absolute;
         top: -55px;
-        left: 550px;
+        left: 500px;
     }
 
     .main {
@@ -657,6 +662,10 @@ body {
 
 /* 768px */
 @media (max-width: 768px) {
+    .content {
+        flex-direction: row;
+    }
+
     .header {
         padding: 8px 10px;
     }
@@ -676,8 +685,24 @@ body {
         font-size: 14px;
     }
 
+    .search {
+        position: relative;
+        order: 3;
+        flex: 1 0 100%;
+        max-width: 400px;
+        margin-top: 10px;
+        margin-left: 0;
+    }
+    .search img {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        left: auto;
+    }
+
     .profileinfo {
-        gap: 10px;
+        gap: 20px;
     }
 
     .profile-btn {
@@ -688,6 +713,18 @@ body {
     .profileinfo img:last-child {
         width: 35px;
         height: 35px;
+    }
+
+    .dollieblair,
+    .foodanddrink {
+        position: relative;
+    }
+
+    .buttons {
+        position: absolute;
+        top: 20px;
+        right: 10px;
+        left: auto;
     }
 
     .sidebar {
@@ -706,13 +743,14 @@ body {
     }
 
     .chanel {
-        flex-direction: column;
-        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
         gap: 10px;
     }
 
     .nameofchanel {
         font-size: 20px;
+        margin: 0;
     }
 
     .buttonsblok {
@@ -745,6 +783,16 @@ body {
         font-size: 14px;
     }
 
+    .subscription {
+        position: relative;
+    }
+
+    .buttons-subscription{
+        position: absolute;
+        top: -55px;
+        left: 350px;
+    }
+
     .statistics {
         font-size: 12px;
         flex-direction: column;
@@ -755,53 +803,150 @@ body {
 /* 450px */
 @media (max-width: 450px) {
     .header {
-        padding: 5px 8px;
+        padding: 10px 18px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: nowrap;
     }
 
     .search {
+        position: relative;
+        display: flex !important;
+        align-items: center;
+    }
+
+    .search input{
         display: none;
+    }
+
+    .search {
+        position: relative;
+        display: flex !important;
+        align-items: center;
+        flex: none !important;
+        max-width: none !important;
+        margin-top: 0 !important;
+        order: 0 !important;
+    }
+    .search img {
+        position: absolute;
+        left: 300px;
+        top: 50%;
+        transform: translateY(-50%);
     }
 
     .profileinfo .button-overlay,
     .profileinfo .profile-btn:nth-child(2) {
         display: none;
     }
+    .content {
+        flex-direction: column;
+        min-height: 100vh;
+        padding-bottom: 60px;
+}
 
     .sidebar {
-        padding: 10px 5px;
-        gap: 10px;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: #fff;
+        padding: 8px 0;
+        z-index: 1000;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-around;
+        align-items: center;
+        height: 60px;
+        top: auto !important;
+        right: auto !important;
+        margin: 0 !important;
     }
 
-    .navigation-list,
-    .subscriptions-list {
-        gap: 10px;
+    .navigation {
+        width: 100%;
     }
 
-    .nav-text,
-    .subscriptions-text,
-    .settings-text {
-        font-size: 12px;
+    .subscriptions,
+    .settings,
+    .burger,
+    .profileinfo .profile-btn,
+    .foodanddrink .recommend,
+    .foodanddrink .buttons-subscription
+    {
+        display: none !important;
     }
 
-    .nav-icon,
-    .subscriptions-icon,
-    .settings-icon {
-        width: 18px;
-        height: 18px;
+    .navigation-list {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0;
+        list-style: none;
+        width: 100%;
+        height: 100%;
+    }
+
+    .navigation-item {
+        flex: 1;
+        text-align: center;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navigation-item:nth-child(-n+4) {
+        display: flex !important;
+    }
+
+    .navigation-item:nth-child(n+5) {
+        display: none !important;
+    }
+
+    .nav-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 3px;
+        padding: 5px;
+        text-decoration: none;
+        height: 100%;
+        width: 100%;
+    }
+
+    .nav-icon {
+        width: 20px;
+        height: 20px;
+    }
+
+    .nav-text {
+        font-size: 10px;
+        font-weight: 500;
+        line-height: 1;
     }
 
     .main {
-        padding: 5px;
-        gap: 20px;
+        flex: 1;
+        padding: 5px 10px;
+        width: 100%;
+        margin-bottom: 60px;
     }
 
     .nameofchanel {
         font-size: 18px;
     }
 
+    .chanel img {
+        margin-left: 15px;
+    }
+
     .videolist,
     .recommendedvideolist {
-        grid-template-columns: 1fr;
+        grid-template-columns: 0.95fr;
         gap: 15px;
     }
 
@@ -813,30 +958,50 @@ body {
         height: 200px;
     }
 
+    .dollieblair,
+    .foodanddrink {
+        position: relative;
+    }
+
     .buttons {
-        align-self: center;
+        position: absolute;
+        top: 20px;
+        right: 25px;
+    }
+
+    .video{
+        position: relative;
+        padding: 0;
+    }
+
+    .time{
+        position: absolute;
+        bottom: 80px;
+        left: 360px;
+    }
+
+    .recommendedvideo{
+        position: relative;
+    }
+
+    .recommendedtime{
+        position: absolute;
+        bottom: 95px;
+        left: 360px;
+    }
+
+    .recommended {
+        position: relative;
+    }
+
+    .recommended-buttons {
+        position: absolute;
+        top: 0;
+        left: 350px;
     }
 
     .recommended-buttons {
         align-self: center;
-    }
-}
-
-/* Mobile Navigation (для очень маленьких экранов) */
-@media (max-width: 374px) {
-    .navigation-list {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .nav-link {
-        flex-direction: row;
-        gap: 8px;
-    }
-
-    .sidebar {
-        overflow-y: auto;
-        max-height: 200px;
     }
 }
 
